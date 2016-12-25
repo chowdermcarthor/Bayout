@@ -101,6 +101,10 @@
 				update_icon(ignore_inhands=1) // In case item_state is set somewhere else.
 	..()
 
+/obj/item/weapon/gun/pickup(mob/user)
+	user.visible_message("\red <b>[user] grabs a weapon!</b>")
+	playsound(user, 'sound/items/unholster.ogg', 50, 1)
+
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.
 //Otherwise, if you want handle_click_empty() to be called, check in consume_next_projectile() and return null there.
@@ -259,9 +263,9 @@
 		if(muzzle_flash)
 			set_light(muzzle_flash)
 
-	if(recoil)
-		spawn()
-			shake_camera(user, recoil+1, recoil)
+	//if(recoil)//NO! NO RECOIL SHAKING! NO!
+	//	spawn()
+	//		shake_camera(user, recoil+1, recoil)
 	update_icon()
 
 

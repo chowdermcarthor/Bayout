@@ -54,8 +54,8 @@
 
 	facing_dir = null
 
-	if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.
-		src.visible_message("<b>\The [src.name]</b> [deathmessage]")
+	//if(!gibbed && deathmessage != "no message") // This is gross, but reliable. Only brains use it.
+	//	src.visible_message("<b>\The [src.name]</b> [deathmessage]")//NO MORE FUCKING SEIZING UP AND FALLING LIMP UGH!
 
 	stat = DEAD
 

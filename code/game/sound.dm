@@ -50,6 +50,7 @@ var/list/miss_sound = list ('sound/weapons/guns/misc/miss.wav','sound/weapons/gu
 var/list/ric_sound = list ('sound/weapons/guns/misc/ric1.wav','sound/weapons/guns/misc/ric2.wav','sound/weapons/guns/misc/ric3.wav','sound/weapons/guns/misc/ric4.wav','sound/weapons/guns/misc/ric5.wav')
 var/list/casing_sound = list ('sound/weapons/guns/misc/casingfall1.wav','sound/weapons/guns/misc/casingfall2.wav','sound/weapons/guns/misc/casingfall3.wav')
 var/list/bullet_hit_object_sound = list('sound/weapons/guns/misc/bullethit.wav')
+var/list/trauma_sound = list('sound/effects/gore/trauma1.ogg', 'sound/effects/gore/trauma2.ogg', 'sound/effects/gore/trauma3.ogg')
 //var/list/gun_sound = list('sound/weapons/Gunshot.ogg', 'sound/weapons/Gunshot2.ogg','sound/weapons/Gunshot3.ogg','sound/weapons/Gunshot4.ogg')
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global)
@@ -185,5 +186,6 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("ric_sound") soundin = pick(ric_sound)
 			if ("casing_sound") soundin = pick(casing_sound)
 			if ("hitobject") soundin = pick(bullet_hit_object_sound)
+			if ("trauma") soundin = pick(trauma_sound)
 			//if ("gunshot") soundin = pick(gun_sound)
 	return soundin

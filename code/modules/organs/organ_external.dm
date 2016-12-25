@@ -402,15 +402,15 @@ This function completely restores a damaged organ to perfect condition.
 			if(compatible_wounds.len)
 				var/datum/wound/W = pick(compatible_wounds)
 				W.open_wound(damage)
-				if(prob(25))
-					if(status & ORGAN_ROBOT)
-						owner.visible_message("\red The damage to [owner.name]'s [name] worsens.",\
-						"\red The damage to your [name] worsens.",\
-						"You hear the screech of abused metal.")
-					else
-						owner.visible_message("\red The wound on [owner.name]'s [name] widens with a nasty ripping noise.",\
-						"\red The wound on your [name] widens with a nasty ripping noise.",\
-						"You hear a nasty ripping noise, as if flesh is being torn apart.")
+				//if(prob(25))
+				//	if(status & ORGAN_ROBOT)
+				//		owner.visible_message("\red The damage to [owner.name]'s [name] worsens.",\
+				//		"\red The damage to your [name] worsens.",\
+				//		"You hear the screech of abused metal.")
+				//	else
+				//		owner.visible_message("\red The wound on [owner.name]'s [name] widens with a nasty ripping noise.",\
+				//		"\red The wound on your [name] widens with a nasty ripping noise.",\
+				//		"You hear a nasty ripping noise, as if flesh is being torn apart.")
 				return
 
 	//Creating wound
@@ -717,6 +717,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 					"<span class='danger'>\The [owner]'s [src.name] flies off in an arc!</span>",\
 					"<span class='moderate'><b>Your [src.name] goes flying off!</b></span>",\
 					"<span class='danger'>You hear a terrible sound of [gore_sound].</span>")
+			playsound(owner, 'sound/effects/gore/severed.ogg', 100, 0)//Pay the sound whether or not it's being amputated cleanly. Because I ilke that sound.
 		if(DROPLIMB_BURN)
 			var/gore = "[(status & ORGAN_ROBOT) ? "": " of burning flesh"]"
 			owner.visible_message(
@@ -730,6 +731,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				"<span class='danger'>\The [owner]'s [src.name] explodes[gore]!</span>",\
 				"<span class='moderate'><b>Your [src.name] explodes[gore]!</b></span>",\
 				"<span class='danger'>You hear the [gore_sound].</span>")
+			playsound(owner, 'sound/effects/gore/chop6.ogg', 100 , 0)//Splat.
 
 	var/mob/living/carbon/human/victim = owner //Keep a reference for post-removed().
 	var/obj/item/organ/external/parent_organ = parent
@@ -884,15 +886,16 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return
 
 	if(owner)
-		owner.visible_message(\
-			"\red You hear a loud cracking sound coming from \the [owner].",\
-			"\red <b>Something feels like it shattered in your [name]!</b>",\
-			"You hear a sickening crack.")
+		playsound(owner, "trauma", 75, 0)
+		//owner.visible_message(\
+		//	"\red You hear a loud cracking sound coming from \the [owner].",\
+		//	"\red <b>Something feels like it shattered in your [name]!</b>",\
+		//	"You hear a sickening crack.")
 		if(owner.species && !(owner.species.flags & NO_PAIN))
 			owner.emote("scream")
 
 	status |= ORGAN_BROKEN
-	broken_description = pick("broken","fracture","hairline fracture")
+	broken_description = "broken"//pick("broken","fracture","hairline fracture")
 	perma_injury = brute_dam
 
 	// Fractures have a chance of getting you out of restraints
@@ -1048,7 +1051,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 /obj/item/organ/external/proc/disfigure(var/type = "brute")
 	if (disfigured)
 		return
-	if(owner)
+	/*if(owner)
 		if(type == "brute")
 			owner.visible_message("\red You hear a sickening cracking sound coming from \the [owner]'s [name].",	\
 			"\red <b>Your [name] becomes a mangled mess!</b>",	\
@@ -1057,6 +1060,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			owner.visible_message("\red \The [owner]'s [name] melts away, turning into mangled mess!",	\
 			"\red <b>Your [name] melts away!</b>",	\
 			"\red You hear a sickening sizzle.")
+	*/ //No! Fuck that shit.
 	disfigured = 1
 
 /obj/item/organ/external/proc/get_wounds_desc()

@@ -40,10 +40,7 @@ var/religion_name = null
 /proc/system_name()
 	return "Nyx"
 
-/proc/station_name()
-	if (station_name)
-		return station_name
-
+/proc/new_station_name()
 	var/random = rand(1,5)
 	var/name = ""
 
@@ -52,24 +49,22 @@ var/religion_name = null
 		name = pick("Imperium", "Heretical", "Cuban", "Psychic", "Elegant", "Common", "Uncommon", "Rare", "Unique", "Houseruled", "Religious", "Atheist", "Traditional", "Houseruled", "Mad", "Super", "Ultra", "Secret", "Top Secret", "Deep", "Death", "Zybourne", "Central", "Main", "Government", "Uoi", "Fat", "Automated", "Experimental", "Augmented")
 		station_name = name + " "
 
-	// Prefix
-	switch(Holiday)
-		//get normal name
-		if(null,"",0)
-			name = pick("", "Stanford", "Dorf", "Alium", "Prefix", "Clowning", "Aegis", "Ishimura", "Scaredy", "Death-World", "Mime", "Honk", "Rogue", "MacRagge", "Ultrameens", "Safety", "Paranoia", "Explosive", "Neckbear", "Donk", "Muppet", "North", "West", "East", "South", "Slant-ways", "Widdershins", "Rimward", "Expensive", "Procreatory", "Imperial", "Unidentified", "Immoral", "Carp", "Ork", "Pete", "Control", "Nettle", "Aspie", "Class", "Crab", "Fist","Corrogated","Skeleton","Race", "Fatguy", "Gentleman", "Capitalist", "Communist", "Bear", "Beard", "Derp", "Space", "Spess", "Star", "Moon", "System", "Mining", "Neckbeard", "Research", "Supply", "Military", "Orbital", "Battle", "Science", "Asteroid", "Home", "Production", "Transport", "Delivery", "Extraplanetary", "Orbital", "Correctional", "Robot", "Hats", "Pizza")
-			if(name)
-				station_name += name + " "
 
-		//For special days like christmas, easter, new-years etc ~Carn
-		if("Friday the 13th")
-			name = pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
-			station_name += name + " "
-			random = 13
-		else
-			//get the first word of the Holiday and use that
-			var/i = findtext(Holiday," ",1,0)
-			name = copytext(Holiday,1,i)
-			station_name += name + " "
+	//Prefix
+	name = pick("", "Stanford", "Dorf", "Alium", "Prefix", "Clowning", "Aegis", "Ishimura", "Scaredy", "Death-World", "Mime", "Honk", "Rogue", "MacRagge", "Ultrameens", "Safety", "Paranoia", "Explosive", "Neckbear", "Donk", "Muppet", "North", "West", "East", "South", "Slant-ways", "Widdershins", "Rimward", "Expensive", "Procreatory", "Imperial", "Unidentified", "Immoral", "Carp", "Ork", "Pete", "Control", "Nettle", "Aspie", "Class", "Crab", "Fist","Corrogated","Skeleton","Race", "Fatguy", "Gentleman", "Capitalist", "Communist", "Bear", "Beard", "Derp", "Space", "Spess", "Star", "Moon", "System", "Mining", "Neckbeard", "Research", "Supply", "Military", "Orbital", "Battle", "Science", "Asteroid", "Home", "Production", "Transport", "Delivery", "Extraplanetary", "Orbital", "Correctional", "Robot", "Hats", "Pizza")
+	if(name)
+		station_name += "Interstaion Two: " + name + " "//Gotta hardcode in the name because certain code don't work no more. Thanks Bay!
+
+	//For special days like christmas, easter, new-years etc ~Carn
+	if("Friday the 13th")
+		name = pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
+		station_name += name + " "
+		random = 13
+	else
+		//get the first word of the Holiday and use that
+		var/i = findtext(Holiday," ",1,0)
+		name = copytext(Holiday,1,i)
+		station_name += name + " "
 
 	// Suffix
 	name = pick("Station", "Fortress", "Frontier", "Suffix", "Death-trap", "Space-hulk", "Lab", "Hazard","Spess Junk", "Fishery", "No-Moon", "Tomb", "Crypt", "Hut", "Monkey", "Bomb", "Trade Post", "Fortress", "Village", "Town", "City", "Edition", "Hive", "Complex", "Base", "Facility", "Depot", "Outpost", "Installation", "Drydock", "Observatory", "Array", "Relay", "Monitor", "Platform", "Construct", "Hangar", "Prison", "Center", "Port", "Waystation", "Factory", "Waypoint", "Stopover", "Hub", "HQ", "Office", "Object", "Fortification", "Colony", "Planet-Cracker", "Roost", "Fat Camp")
@@ -90,6 +85,8 @@ var/religion_name = null
 		if(13)
 			station_name += pick("13","XIII","Thirteen")
 
+	station_name += " Edition"
+
 
 	if (config && config.server_name)
 		world.name = "[config.server_name]: [name]"
@@ -98,7 +95,12 @@ var/religion_name = null
 
 	return station_name
 
-/proc/world_name(var/name)
+/proc/station_name()
+	if(!station_name)
+		station_name = new_station_name()
+	return station_name
+
+/proc/set_world_name(var/name)
 
 	station_name = name
 
@@ -106,8 +108,6 @@ var/religion_name = null
 		world.name = "[config.server_name]: [name]"
 	else
 		world.name = name
-
-	return name
 
 var/syndicate_name = null
 /proc/syndicate_name()

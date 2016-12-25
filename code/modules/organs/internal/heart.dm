@@ -40,7 +40,7 @@
 
 		if(heartbeat >= rate)
 			heartbeat = 0
-			owner << sound(beat_sound,0,0,0,50)
+			//owner << sound(beat_sound,0,0,0,50)//Heartbeating sounds are really fucking annoying.
 		else
 			heartbeat++
 

@@ -120,6 +120,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!src.lit)
 		src.lit = 1
 		damtype = "fire"
+		playsound(src, 'sound/items/cig_light.ogg', 75, 1, -1)//Play the nice sound.
 		if(reagents.get_reagent_amount("phoron")) // the phoron explodes when exposed to fire
 			var/datum/effect/effect/system/reagents_explosion/e = new()
 			e.set_up(round(reagents.get_reagent_amount("phoron") / 2.5, 1), get_turf(src), 0, 0)
@@ -429,12 +430,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	slot_flags = SLOT_BELT
 	attack_verb = list("burnt", "singed")
 	var/base_state
+	var/sound_toggleON = 'sound/items/lighter_on.ogg'
+	var/sound_toggleOFF = 'sound/items/lighter_off.ogg'
+
 
 /obj/item/weapon/flame/lighter/zippo
 	name = "\improper Zippo lighter"
 	desc = "The zippo."
 	icon_state = "zippo"
 	item_state = "zippo"
+	sound_toggleON = 'sound/items/zippo_on.ogg'
+	sound_toggleOFF = 'sound/items/zippo_off.ogg'
 
 /obj/item/weapon/flame/lighter/random
 	New()
@@ -447,6 +453,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		base_state = icon_state
 	if(user.r_hand == src || user.l_hand == src)
 		if(!lit)
+			playsound(src, sound_toggleON, 30, 0)
 			lit = 1
 			icon_state = "[base_state]on"
 			item_state = "[base_state]on"
@@ -466,6 +473,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			set_light(2)
 			processing_objects.Add(src)
 		else
+			playsound(src, sound_toggleOFF, 30, 0)
 			lit = 0
 			icon_state = "[base_state]"
 			item_state = "[base_state]"

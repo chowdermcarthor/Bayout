@@ -212,6 +212,7 @@
 		return 1
 
 	face_atom(A)
+	A.visible_message("<small>[A] looks at [src].</small>")//Doesn't work for everything yet.
 	A.examine(src)
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())
@@ -892,13 +893,6 @@
 
 /mob/proc/get_species()
 	return ""
-
-/mob/proc/flash_weak_pain()
-	if(istype(src,/mob/living))
-		var/mob/living/L = src
-//		flick("weak_pain",L.flash["pain"])
-		if (L.HUDtech.Find("pain"))
-			flick("weak_pain",L.HUDtech["pain"])
 
 
 /mob/proc/get_visible_implants(var/class = 0)

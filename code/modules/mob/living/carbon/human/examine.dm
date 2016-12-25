@@ -1,4 +1,5 @@
 /mob/living/carbon/human/examine(mob/user)
+	//user.visible_message("<small>[user] looks at [src].</small>")
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
 	var/skipjumpsuit = 0
@@ -199,12 +200,13 @@
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>\n"
 		if(istype(usr, /mob/living/carbon/human) && !usr.stat && Adjacent(usr))
 			usr.visible_message("<b>[usr]</b> checks [src]'s pulse.", "You check [src]'s pulse.")
-		spawn(15)
-			if(distance <= 1 && usr.stat != 1)
+		/*spawn(15)
+			if(distance <= 1 && usr.stat != 1) //How the fuck would you know whether or not he has a pulse just by fucking looking at him anyway. Fuck this game.
 				if(pulse() == PULSE_NONE)
 					usr << "<span class='deadsay'>[T.He] [T.has] no pulse[src.client ? "" : " and [T.his] soul has departed"]...</span>"
 				else
 					usr << "<span class='deadsay'>[T.He] [T.has] a pulse!</span>"
+			*/
 
 	if(fire_stacks)
 		msg += "[T.He] [T.is] covered in some liquid.\n"
@@ -233,6 +235,15 @@
 	var/list/wound_flavor_text = list()
 	var/list/is_bleeding = list()
 
+	if(health <= 75 && health > 50)//Is the person a little hurt?
+		msg += "<span class='warning'><b>[T.He] looks somewhat wounded.\n</b></span>"
+
+	if(health <= 50 && health > 25)//Hurt.
+		msg += "<span class='warning'><b>[T.He] looks wounded.</b></span>\n"
+
+	if(health <= 25)//Or incredibly hurt.
+		msg += "<span class='warning'><b>[T.He] looks incredibly wounded.</b>\n</span>"
+
 	for(var/organ_tag in species.has_limbs)
 
 		var/list/organ_data = species.has_limbs[organ_tag]
@@ -245,6 +256,7 @@
 			wound_flavor_text["[organ_descriptor]"] = "<span class='warning'><b>[T.He] [T.has] a stump where [T.his] [organ_descriptor] should be.</b></span>\n"
 		else
 			continue
+
 
 	for(var/obj/item/organ/external/temp in organs)
 		if(temp)
@@ -342,11 +354,11 @@
 		msg += "<span class='danger'>[src] [T.has] blood running from under [T.his] gloves!</span>\n"
 	*/
 
-	for(var/limb in wound_flavor_text)
-		msg += wound_flavor_text[limb]
-		is_bleeding[limb] = null
-	for(var/limb in is_bleeding)
-		msg += is_bleeding[limb]
+	//for(var/limb in wound_flavor_text)//Uneeded.
+	//	msg += wound_flavor_text[limb]
+	//	is_bleeding[limb] = null
+	//for(var/limb in is_bleeding)
+	//	msg += is_bleeding[limb]
 	for(var/implant in get_visible_implants(0))
 		msg += "<span class='danger'>[src] [T.has] \a [implant] sticking out of [T.his] flesh!</span>\n"
 	if(digitalcamo)

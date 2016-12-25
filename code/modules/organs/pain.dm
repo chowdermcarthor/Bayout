@@ -4,6 +4,12 @@ mob/proc/flash_pain()
 		if (L.HUDtech.Find("pain"))
 			flick("pain",L.HUDtech["pain"])
 
+/mob/proc/flash_weak_pain()//Why the fuck wasn't that there before?
+	if(istype(src,/mob/living))
+		var/mob/living/L = src
+		if (L.HUDtech.Find("pain"))
+			flick("weak_pain",L.HUDtech["pain"])
+
 mob/var/list/pain_stored = list()
 mob/var/last_pain_message = ""
 mob/var/next_pain_time = 0
@@ -28,23 +34,23 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 	if(burning)
 		switch(amount)
 			if(1 to 10)
-				msg = "\red <b>Your [partname] burns.</b>"
+				//msg = "\red <b>Your [partname] burns.</b>"
 			if(11 to 90)
 				flash_weak_pain()
-				msg = "\red <b><font size=2>Your [partname] burns badly!</font></b>"
+				//msg = "\red <b><font size=2>Your [partname] burns badly!</font></b>"
 			if(91 to 10000)
 				flash_pain()
-				msg = "\red <b><font size=3>OH GOD! Your [partname] is on fire!</font></b>"
+				//msg = "\red <b><font size=3>OH GOD! Your [partname] is on fire!</font></b>"
 	else
 		switch(amount)
 			if(1 to 10)
-				msg = "<b>Your [partname] hurts.</b>"
+				//msg = "<b>Your [partname] hurts.</b>"
 			if(11 to 90)
 				flash_weak_pain()
-				msg = "<b><font size=2>Your [partname] hurts badly.</font></b>"
+				//msg = "<b><font size=2>Your [partname] hurts badly.</font></b>"
 			if(91 to 10000)
 				flash_pain()
-				msg = "<b><font size=3>OH GOD! Your [partname] is hurting terribly!</font></b>"
+				//msg = "<b><font size=3>OH GOD! Your [partname] is hurting terribly!</font></b>"
 	if(msg && (msg != last_pain_message || prob(10)))
 		last_pain_message = msg
 		src << msg
@@ -123,3 +129,31 @@ mob/living/carbon/human/proc/handle_pain()
 
 	if(toxDamageMessage && prob(toxMessageProb))
 		src.custom_pain(toxDamageMessage, getToxLoss() >= 15)
+
+
+/mob/living/carbon/human/proc/painchecks()
+	if(stat >= 2)
+		return 
+	if(species.flags & NO_PAIN)
+		return 
+	if(reagents.has_reagent("paracetamol"))
+		return
+	if(reagents.has_reagent("tramadol"))
+		return
+	if(reagents.has_reagent("oxycodone"))
+		return
+	if(reagents.has_reagent("morphine"))
+		return
+	if(analgesic)
+		return 
+	else 
+		return 1
+
+/*mob/living/carbon/human/proc/suffer_well(var/prob)//Subber well pupper.
+	if(prob(prob))
+		emote("agony")
+		Weaken(10)
+		shake_camera(src, 20, 3)
+		if(!stat)//So this doesn't get displayed when you're asleep.
+			src.visible_message("<span class='warning'>[src] gives into the pain!</span>")
+			*/ //to be finished soon.

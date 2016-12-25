@@ -396,6 +396,11 @@
 						if(0 to 20)				icon_state = "health5"
 						else					icon_state = "health6"
 
+/obj/screen/health/Click()
+	if(ishuman(parentmob))
+		var/mob/living/carbon/human/X = parentmob
+		X.exam_self()
+
 /*/obj/screen/health/New()
 	if(usr.client)
 		usr.client.screen += src

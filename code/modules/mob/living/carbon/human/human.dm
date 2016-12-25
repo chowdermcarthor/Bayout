@@ -1292,6 +1292,57 @@ var/list/rank_prefix = list(\
 			fail_msg = "There is no exposed flesh or thin material [target_zone == "head" ? "on their head" : "on their body"] to inject into."
 		user << "<span class='alert'>[fail_msg]</span>"
 
+/mob/living/carbon/human/proc/exam_self()
+	var/organpain = 0
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = usr
+		src << ("\blue You check yourself for injuries.")
+
+		for(var/obj/item/organ/external/org in H.organs)
+			var/status = ""
+
+			if(H.painchecks())//Can we feel pain? If we can then it tells us how much pain our limbs are in.
+				organpain = org.get_damage()
+				if(organpain > 0)
+					status = " <small>pain</small>"
+				if(organpain > 5)
+					status = " pain"
+				if(organpain > 20)
+					status = " PAIN!"
+				if(organpain > 40)
+					status = "<large><b> PAIN!</b></large>"
+
+			if(org.is_stump())//it missing
+				status = " MISSING!"
+			
+			
+			if(organpain && (org.status & ORGAN_BROKEN))//Is the limb broken and hurt?
+				status += " || <b>BROKEN!</b>"
+
+			if((!organpain) && (org.status & ORGAN_BROKEN))//Or just broken.
+				status = "<b> IT'S BROKEN!</b>"
+			
+			
+			if(organpain && (org.dislocated == 2))//Hurt and dislocated?
+				status += " || <b>DISLOCATED!</b>"
+
+			if((!organpain) && (org.dislocated == 2))//Or just dislocated.
+				status = "<b> DISLOCATED!</b>"
+			
+			
+			if(org.status & ORGAN_DEAD)//it dead
+				status = "</b> NECROTIC!</b>"
+			
+			if(!org.is_usable())//it useless
+				status = "</b> USELESS!</b>"
+
+			if(status == "")
+				status = " OK"
+			src << output(text("\t [] []:[]",status==" OK"?"\blue ":"\red ", capitalize(org.name), status), 1)
+			
+
+
+
 /mob/living/carbon/human/print_flavor_text(var/shrink = 1)
 	var/list/equipment = list(src.head,src.wear_mask,src.glasses,src.w_uniform,src.wear_suit,src.gloves,src.shoes)
 	var/list/exposed = list( \

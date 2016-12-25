@@ -207,8 +207,8 @@
 					m_type = 2
 
 		if ("deathgasp")
-			message = "[species.death_message]"
-			m_type = 1
+			//message = "[species.death_message]"
+			//m_type = 1
 
 		if ("giggle")
 			if(miming)
@@ -580,9 +580,9 @@ wink, yawn, swish, sway/wag, fastsway/qwag, stopsway/swag"}
 	pose =  sanitize(input(usr, "This is [src]. [get_visible_gender() == MALE ? "He" : get_visible_gender() == FEMALE ? "She" : "They"] [get_visible_gender() == NEUTER ? "are" : "is"]...", "Pose", null)  as text)
 
 /mob/living/carbon/human/verb/set_flavor()
-	set name = "Set Flavour Text"
-	set desc = "Sets an extended description of your character's features."
-	set category = "IC"
+	//set name = "Set Flavour Text"
+	//set desc = "Sets an extended description of your character's features."
+	//set category = "IC"
 
 	var/HTML = "<body>"
 	HTML += "<tt><center>"

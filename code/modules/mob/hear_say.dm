@@ -90,6 +90,8 @@
 		hear_sleep(message)
 		return
 
+	playsound(loc, 'sound/effects/radio_chatter.ogg', 25, 0, -1)//brrt
+
 	var/track = null
 
 	//non-verbal languages are garbled if you can't see the speaker. Yes, this includes if they are inside a closet.
