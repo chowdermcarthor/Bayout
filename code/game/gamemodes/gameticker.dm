@@ -37,13 +37,16 @@ var/global/datum/controller/gameticker/ticker
 	'sound/music/traitor.ogg',\
 	'sound/music/title2.ogg',\
 	'sound/music/clouds.s3m',\
-	'sound/music/space.ogg',\*/
+	'sound/music/space.ogg',\
 	'sound/music/tonspender_irritations.ogg',\
 	'sound/music/i_am_waiting_for_you_last_summer_neon_fever.ogg',\
 	'sound/music/paradise_cracked_skytown.ogg',\
 	'sound/music/nervous_testpilot _my_beautiful_escape.ogg',\
 	'sound/music/deus_ex_unatco_nervous_testpilot_remix.ogg',\
-	'sound/music/paradise_cracked_title03.ogg') //Ground Control to Major Tom, this song is cool, what's going on?
+	'sound/music/paradise_cracked_title03.ogg') */
+	'sound/music/title1.ogg',\
+	'sound/music/title3.ogg',\
+	'sound/music/title4.ogg')
 	do
 		pregame_timeleft = 180
 		world << "<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>"
