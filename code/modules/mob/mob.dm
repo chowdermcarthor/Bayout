@@ -212,7 +212,7 @@
 		return 1
 
 	face_atom(A)
-	A.visible_message("<small>[A] looks at [src].</small>")//Doesn't work for everything yet.
+	//A.visible_message("<small>[A] looks at [src].</small>")//Doesn't work for everything yet.
 	A.examine(src)
 
 /mob/verb/pointed(atom/A as mob|obj|turf in view())

@@ -1,5 +1,5 @@
 /mob/living/carbon/human/examine(mob/user)
-	//user.visible_message("<small>[user] looks at [src].</small>")
+	user.visible_message("<small>[user] looks at [src].</small>")
 	var/skipgloves = 0
 	var/skipsuitstorage = 0
 	var/skipjumpsuit = 0
