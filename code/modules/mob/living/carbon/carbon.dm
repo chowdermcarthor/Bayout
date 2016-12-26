@@ -319,7 +319,7 @@
 
 	if(!item) return //Grab processing has a chance of returning null
 
-
+	playsound(src, 'sound/effects/throw.ogg', 50, 1)
 	src.remove_from_mob(item)
 	item.loc = src.loc
 
