@@ -54,6 +54,7 @@
 	mover.Move(below)
 
 	if(!soft)
+		playsound(mover.loc, 'sound/effects/gore/fallsmash.ogg', 50, 1)
 		if(!isliving(mover))
 			if(istype(below, /turf/simulated/open))
 				mover.visible_message("\The [mover] falls from the deck above through \the [below]!", "You hear a whoosh of displaced air.")
@@ -69,14 +70,14 @@
 			// Handle people getting hurt, it's funny!
 			if (istype(mover, /mob/living/carbon/human))
 				var/mob/living/carbon/human/H = mover
-				var/damage = 5
+				var/damage = 10
 				H.apply_damage(rand(0, damage), BRUTE, "head")
 				H.apply_damage(rand(0, damage), BRUTE, "chest")
 				H.apply_damage(rand(0, damage), BRUTE, "l_leg")
 				H.apply_damage(rand(0, damage), BRUTE, "r_leg")
 				H.apply_damage(rand(0, damage), BRUTE, "l_arm")
 				H.apply_damage(rand(0, damage), BRUTE, "r_arm")
-				H.weakened = max(H.weakened,2)
+				H.Stun(2)//H.weakened = max(H.weakened,2)
 				H.updatehealth()
 
 // override to make sure nothing is hidden

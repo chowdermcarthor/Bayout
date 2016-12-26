@@ -48,6 +48,7 @@
 		M.visible_message("<span class='notice'>\A [M] climbs [icon_state == "ladderup" ? "up" : "down"] \a [src]!</span>",
 			"You climb [icon_state == "ladderup"  ? "up" : "down"] \the [src]!",
 			"You hear the grunting and clanging of a metal ladder being used.")
+		playsound(M, 'sound/effects/ladder.ogg', 50, 1, -1)
 		M.Move(T)
 
 	CanPass(obj/mover, turf/source, height, airflow)
