@@ -147,7 +147,8 @@
 	if (src.health >= config.health_threshold_crit)
 		if(src == M && istype(src, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = src
-			src.visible_message( \
+			H.exam_self()
+			/*src.visible_message( \
 				text("\blue [src] examines [].",src.gender==MALE?"himself":"herself"), \
 				"\blue You check yourself for injuries." \
 				)
@@ -193,7 +194,7 @@
 					src.show_message("My [org.name] is <span class='warning'> [english_list(status)].</span>",1)
 				else
 					src.show_message("My [org.name] is <span class='notice'> OK.</span>",1)
-
+			*/
 			if((SKELETON in H.mutations) && (!H.w_uniform) && (!H.wear_suit))
 				H.play_xylophone()
 		else if (on_fire)
