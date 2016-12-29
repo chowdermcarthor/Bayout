@@ -1296,10 +1296,9 @@ var/list/rank_prefix = list(\
 	var/organpain = 0
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = usr
-		src.visible_message( \
-			text("\blue [src] examines [].",src.gender==MALE?"himself":"herself"), \
-			"\blue You check yourself for injuries." \
-			)
+		src << "\blue You chck yourself for injuries."
+		if(!stat)
+			src.visible_message("\blue [src] examines [src.gender==MALE?"himself":"herself"].")
 
 		for(var/obj/item/organ/external/org in H.organs)
 			var/status = ""
