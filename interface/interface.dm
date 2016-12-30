@@ -64,6 +64,8 @@ Hotkey-Mode: (hotkey-mode must be on)
 \t2 = disarm-intent
 \t3 = grab-intent
 \t4 = harm-intent
+\tPgUp = go up
+\tPgDwn = go down
 \tCtrl = drag
 \tShift = examine
 </font>"}
