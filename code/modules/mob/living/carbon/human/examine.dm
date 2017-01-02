@@ -258,6 +258,7 @@
 			continue
 
 
+	
 	for(var/obj/item/organ/external/temp in organs)
 		if(temp)
 			if(temp.status & ORGAN_ROBOT)
@@ -267,11 +268,11 @@
 				else
 					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] a robot [temp.name]. It has[temp.get_wounds_desc()]!</span>\n"
 			else if(temp.wounds.len > 0 || temp.open)
-				if(temp.is_stump() && temp.parent_organ && organs_by_name[temp.parent_organ])
-					var/obj/item/organ/external/parent = organs_by_name[temp.parent_organ]
-					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [parent.name].</span><br>"
-				else
-					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.name].</span><br>"
+				//if(temp.is_stump() && temp.parent_organ && organs_by_name[temp.parent_organ])
+				//	var/obj/item/organ/external/parent = organs_by_name[temp.parent_organ]
+				//	wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [parent.name].</span><br>"
+				//else
+				//	wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.name].</span><br>"
 				if(temp.status & ORGAN_BLEEDING)
 					is_bleeding["[temp.name]"] = "<span class='danger'>[T.His] [temp.name] is bleeding!</span><br>"
 			else
@@ -279,8 +280,8 @@
 			if(temp.dislocated == 2)
 				wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.joint] is dislocated!</span><br>"
 			if(((temp.status & ORGAN_BROKEN) && temp.brute_dam > temp.min_broken_damage) || (temp.status & ORGAN_MUTATED))
-				wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is dented and swollen!</span><br>"
-
+				wound_flavor_text["[temp.name]"] += "<span class='warning'>[T.His] [temp.name] is shattered!</span><br>"
+	
 	//Handles the text strings being added to the actual description.
 	//If they have something that covers the limb, and it is not missing, put flavortext.  If it is covered but bleeding, add other flavortext.
 
@@ -354,11 +355,11 @@
 		msg += "<span class='danger'>[src] [T.has] blood running from under [T.his] gloves!</span>\n"
 	*/
 
-	//for(var/limb in wound_flavor_text)//Uneeded.
-	//	msg += wound_flavor_text[limb]
-	//	is_bleeding[limb] = null
-	//for(var/limb in is_bleeding)
-	//	msg += is_bleeding[limb]
+	for(var/limb in wound_flavor_text)//Uneeded.
+		msg += wound_flavor_text[limb]
+		is_bleeding[limb] = null
+	for(var/limb in is_bleeding)
+		msg += is_bleeding[limb]
 	for(var/implant in get_visible_implants(0))
 		msg += "<span class='danger'>[src] [T.has] \a [implant] sticking out of [T.his] flesh!</span>\n"
 	if(digitalcamo)
