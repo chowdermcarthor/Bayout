@@ -106,6 +106,9 @@ proc/get_radio_key_from_channel(var/channel)
 		message = stutter(message)
 		verb = pick("stammers","stutters")
 		speech_problem_flag = 1
+	if(lisp)
+		message = lisp(message, lisp)
+		speech_problem_flag = 1
 
 	returns[1] = message
 	returns[2] = verb

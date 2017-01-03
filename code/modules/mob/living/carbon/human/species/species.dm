@@ -35,6 +35,8 @@
 	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 
+	var/teeth_type = /obj/item/stack/teeth/generic 		 //What sort of teeth do the species have
+
 	var/min_age = 17
 	var/max_age = 70
 

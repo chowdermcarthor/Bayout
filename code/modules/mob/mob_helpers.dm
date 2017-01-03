@@ -240,6 +240,15 @@ proc/slur(phrase)
 		p++//for each letter p is increased to find where the next letter will be.
 	return sanitize(t)
 
+/proc/lisp(message, intensity=100) //Intensity = how hard will the dude be lisped
+	message = prob(intensity) ? replacetext(message, "f", "ph") : message
+	message = prob(intensity) ? replacetext(message, "t", "ph") : message
+	message = prob(intensity) ? replacetext(message, "s", "sh") : message
+	message = prob(intensity) ? replacetext(message, "th", "hh") : message
+	message = prob(intensity) ? replacetext(message, "ck", "gh") : message
+	message = prob(intensity) ? replacetext(message, "c", "gh") : message
+	message = prob(intensity) ? replacetext(message, "k", "gh") : message
+	return message
 
 proc/Gibberish(t, p)//t is the inputted message, and any value higher than 70 for p will cause letters to be replaced instead of added
 	/* Turn text into complete gibberish! */

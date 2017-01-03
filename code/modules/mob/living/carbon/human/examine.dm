@@ -268,11 +268,12 @@
 				else
 					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] a robot [temp.name]. It has[temp.get_wounds_desc()]!</span>\n"
 			else if(temp.wounds.len > 0 || temp.open)
-				//if(temp.is_stump() && temp.parent_organ && organs_by_name[temp.parent_organ])
-				//	var/obj/item/organ/external/parent = organs_by_name[temp.parent_organ]
-				//	wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [parent.name].</span><br>"
-				//else
-				//	wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.name].</span><br>"
+				/*if(temp.is_stump() && temp.parent_organ && organs_by_name[temp.parent_organ])
+					var/obj/item/organ/external/parent = organs_by_name[temp.parent_organ]
+					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [parent.name].</span><br>"
+				else
+					wound_flavor_text["[temp.name]"] = "<span class='warning'>[T.He] [T.has] [temp.get_wounds_desc()] on [T.his] [temp.name].</span><br>"
+				*///Removing because they're unneeded bloat descriptions.
 				if(temp.status & ORGAN_BLEEDING)
 					is_bleeding["[temp.name]"] = "<span class='danger'>[T.His] [temp.name] is bleeding!</span><br>"
 			else
@@ -364,6 +365,10 @@
 		msg += "<span class='danger'>[src] [T.has] \a [implant] sticking out of [T.his] flesh!</span>\n"
 	if(digitalcamo)
 		msg += "[T.He] [T.is] repulsively uncanny!\n"
+
+	var/obj/item/organ/external/head/O = locate(/obj/item/organ/external/head) in organs
+	if(O && O.get_teeth() < O.max_teeth)
+		msg += "<span class='warning'>[O.get_teeth() <= 0 ? "All" : "[O.max_teeth - O.get_teeth()]"] of [T.his] teeth are missing!</span>\n"
 
 	if(hasHUD(usr,"security"))
 		var/perpname = "wot"
