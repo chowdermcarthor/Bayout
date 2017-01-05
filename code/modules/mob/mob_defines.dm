@@ -176,3 +176,5 @@
 	var/list/HUDprocess = list() //What HUD object need process
 	var/list/HUDtech = list()
 	var/defaultHUD = "" //Default mob hud
+
+	var/footstep = 0 //Probably should go under living.

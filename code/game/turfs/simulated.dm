@@ -97,10 +97,12 @@
 		update_dirt()
 
 		if(istype(M, /mob/living/carbon/human))
+			var/footstepsound
 			var/mob/living/carbon/human/H = M
 			// Tracking blood
 			var/list/bloodDNA = null
 			var/bloodcolor=""
+			
 			if(H.shoes)
 				var/obj/item/clothing/shoes/S = H.shoes
 				if(istype(S))
@@ -122,6 +124,38 @@
 					from.AddTracks(/obj/effect/decal/cleanable/blood/tracks/footprints,bloodDNA,0,H.dir,bloodcolor) // Going
 
 				bloodDNA = null
+
+			//Shoe sounds
+			if 		(istype(src, /turf/simulated/floor/grass))
+				footstepsound = "grassfootsteps"
+			//else 	if(istype(src, /turf/stalker/floor/tropa))//Not needed for now.
+			//	footstepsound = "sandfootsteps"
+			else 	if(istype(src, /turf/simulated/floor/beach/water))
+				footstepsound = "waterfootsteps"
+			else 	if(istype(src, /turf/simulated/floor/wood))
+				footstepsound = "woodfootsteps"
+			else 	if(istype(src, /turf/simulated/floor/carpet))
+				footstepsound = "carpetfootsteps"
+			else 	if(istype(src, /turf/simulated/floor/dirt))
+				footstepsound = "dirtfootsteps"
+			else
+				footstepsound = "erikafootsteps"
+
+			if(istype(H.shoes, /obj/item/clothing/shoes))//This is probably the worst possible way to handle walking sfx.
+				if(M.m_intent == "run")
+					if(M.footstep >= 2)
+						M.footstep = 0
+						playsound(src, footstepsound, 100, 1)
+					else
+						M.footstep++
+				else
+					if(M.footstep >= 6)
+						M.footstep = 0
+						playsound(src, footstepsound, 100, 1)
+					else
+						M.footstep++
+
+			
 
 		if(src.wet)
 

@@ -51,6 +51,13 @@ var/list/ric_sound = list ('sound/weapons/guns/misc/ric1.wav','sound/weapons/gun
 var/list/casing_sound = list ('sound/weapons/guns/misc/casingfall1.wav','sound/weapons/guns/misc/casingfall2.wav','sound/weapons/guns/misc/casingfall3.wav')
 var/list/bullet_hit_object_sound = list('sound/weapons/guns/misc/bullethit.wav')
 var/list/trauma_sound = list('sound/effects/gore/trauma1.ogg', 'sound/effects/gore/trauma2.ogg', 'sound/effects/gore/trauma3.ogg')
+var/list/erikafootsteps = list('sound/effects/footsteps/tile1.wav','sound/effects/footsteps/tile2.wav','sound/effects/footsteps/tile3.wav','sound/effects/footsteps/tile4.wav')
+var/list/grassfootsteps = list('sound/effects/footsteps/grass/grass1.wav','sound/effects/footsteps/grass/grass2.wav','sound/effects/footsteps/grass/grass3.wav','sound/effects/footsteps/grass/grass4.wav')
+var/list/dirtfootsteps = list('sound/effects/footsteps/dirt/dirt1.wav','sound/effects/footsteps/dirt/dirt2.wav','sound/effects/footsteps/dirt/dirt3.wav','sound/effects/footsteps/dirt/dirt4.wav')
+var/list/waterfootsteps = list('sound/effects/footsteps/water/slosh1.wav','sound/effects/footsteps/water/slosh2.wav','sound/effects/footsteps/water/slosh3.wav','sound/effects/footsteps/water/slosh4.wav')
+var/list/sandfootsteps = list('sound/effects/footsteps/sand/sand_step1.ogg','sound/effects/footsteps/sand/sand_step2.ogg','sound/effects/footsteps/sand/sand_step3.ogg','sound/effects/footsteps/sand/sand_step4.ogg','sound/effects/footsteps/sand/sand_step5.ogg','sound/effects/footsteps/sand/sand_step6.ogg','sound/effects/footsteps/sand/sand_step7.ogg','sound/effects/footsteps/sand/sand_step8.ogg')
+var/list/woodfootsteps = list ('sound/effects/footsteps/wood/wood_step1.ogg','sound/effects/footsteps/wood/wood_step2.ogg','sound/effects/footsteps/wood/wood_step3.ogg','sound/effects/footsteps/wood/wood_step4.ogg','sound/effects/footsteps/wood/wood_step5.ogg','sound/effects/footsteps/wood/wood_step6.ogg','sound/effects/footsteps/wood/wood_step7.ogg','sound/effects/footsteps/wood/wood_step8.ogg')
+var/list/carpetfootsteps = list ('sound/effects/footsteps/carpet/carpet_step1.ogg','sound/effects/footsteps/carpet/carpet_step2.ogg','sound/effects/footsteps/carpet/carpet_step3.ogg','sound/effects/footsteps/carpet/carpet_step4.ogg','sound/effects/footsteps/carpet/carpet_step5.ogg','sound/effects/footsteps/carpet/carpet_step6.ogg','sound/effects/footsteps/carpet/carpet_step7.ogg','sound/effects/footsteps/carpet/carpet_step8.ogg')
 //var/list/gun_sound = list('sound/weapons/Gunshot.ogg', 'sound/weapons/Gunshot2.ogg','sound/weapons/Gunshot3.ogg','sound/weapons/Gunshot4.ogg')
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global)
@@ -164,7 +171,7 @@ var/const/FALLOFF_SOUNDS = 0.5
 /client/proc/playtitlemusic()
 	if(!ticker || !ticker.login_music)	return
 	if(is_preference_enabled(/datum/client_preference/play_lobby_music))
-		src << sound(ticker.login_music, repeat = 0, wait = 0, volume = 85, channel = 1) // MAD JAMS
+		src << sound(ticker.login_music, repeat = 1, wait = 0, volume = 85, channel = 1) // MAD JAMS
 
 /proc/get_rand_frequency()
 	return rand(32000, 55000) //Frequency stuff only works with 45kbps oggs.
@@ -187,5 +194,12 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("casing_sound") soundin = pick(casing_sound)
 			if ("hitobject") soundin = pick(bullet_hit_object_sound)
 			if ("trauma") soundin = pick(trauma_sound)
+			if ("erikafootsteps") soundin = pick(erikafootsteps)
+			if ("grassfootsteps") soundin = pick(grassfootsteps)
+			if ("dirtfootsteps") soundin = pick(dirtfootsteps)
+			if ("waterfootsteps") soundin = pick(waterfootsteps)
+			if ("sandfootsteps") soundin = pick(sandfootsteps)
+			if ("woodfootsteps") soundin = pick(woodfootsteps)
+			if ("carpetfootsteps") soundin = pick(carpetfootsteps) 
 			//if ("gunshot") soundin = pick(gun_sound)
 	return soundin
