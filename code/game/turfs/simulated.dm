@@ -143,7 +143,7 @@
 
 			if(istype(H.shoes, /obj/item/clothing/shoes))//This is probably the worst possible way to handle walking sfx.
 				if(M.m_intent == "run")
-					if(M.footstep >= 2)
+					if(M.footstep >= 1)//Every two steps.
 						M.footstep = 0
 						playsound(src, footstepsound, 100, 1)
 					else
