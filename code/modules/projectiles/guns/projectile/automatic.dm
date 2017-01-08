@@ -75,6 +75,9 @@
 	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.wav'
 	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.wav'
 	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.wav'
+	requires_two_hands = 1
+	wielded_icon = "assault-wielded"
+
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
@@ -127,6 +130,8 @@
 	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.wav'
 	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.wav'
 	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.wav'
+	requires_two_hands = 1
+	wielded_icon = "z8carbine-wielded"
 
 	burst_delay = 4
 	firemodes = list(
@@ -196,6 +201,8 @@
 	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.wav'
 	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.wav'
 	fire_sound = 'sound/weapons/guns/fire/lmg_fire.wav'
+	requires_two_hands = 1
+	wielded_icon = "assault-wielded"
 
 	firemodes = list(
 		list(mode_name="short bursts",	burst=5, move_delay=6, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),

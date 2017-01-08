@@ -16,6 +16,8 @@
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
 	var/recentpump = 0 // to prevent spammage
+	requires_two_hands = 1
+	wielded_icon = "rifle-wielded"
 
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)
@@ -49,6 +51,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
 	max_shells = 7 //match the ammo box capacity, also it can hold a round in the chamber anyways, for a total of 8.
 	ammo_type = /obj/item/ammo_casing/shotgun
+	wielded_icon = "shotgun-wielded"
 
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel
 	name = "double-barreled shotgun"
@@ -69,6 +72,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
+	requires_two_hands = 1
+	wielded_icon = "rifle-wielded"
 
 	burst_delay = 0
 	firemodes = list(
@@ -119,6 +124,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	w_class = 3
 	force = WEAPON_FORCE_PAINFULL
+	requires_two_hands = 0
 
 /* Ironhammer stuff */
 
@@ -142,6 +148,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
 	move_delay = null
+	wielded_icon = "shotgun-wielded"
 	firemodes = list(
 		list(mode_name="fire one barrel at a time", burst=1),
 		list(mode_name="fire both barrels at once", burst=2),
