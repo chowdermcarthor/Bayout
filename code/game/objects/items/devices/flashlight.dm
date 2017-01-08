@@ -111,8 +111,8 @@
 	name = "heavy duty flashlight"
 	desc = "A hand-held heavy-duty light."
 	icon = 'icons/obj/lighting.dmi'
-	icon_state = "heavyduty"
-	item_state = "heavyduty"
+	//icon_state = "heavyduty"
+	//item_state = "heavyduty"
 	brightness_on = 6
 
 /obj/item/device/flashlight/seclite
