@@ -53,7 +53,7 @@
 	mover.Move(below)
 
 	if(!soft)
-		playsound(mover.loc, 'sound/effects/gore/fallsmash.ogg', 50, 1)
+		
 		if(!isliving(mover))
 			if(istype(below, /turf/simulated/open))
 				mover.visible_message("\The [mover] falls from the deck above through \the [below]!", "You hear a whoosh of displaced air.")
@@ -68,6 +68,7 @@
 
 			// Handle people getting hurt, it's funny!
 			if (istype(mover, /mob/living/carbon/human))
+				playsound(mover.loc, 'sound/effects/gore/fallsmash.ogg', 50, 1)
 				var/mob/living/carbon/human/H = mover
 				var/damage = 10
 				H.apply_damage(rand(0, damage), BRUTE, "head")
@@ -76,8 +77,8 @@
 				H.apply_damage(rand(0, damage), BRUTE, "r_leg")
 				H.apply_damage(rand(0, damage), BRUTE, "l_arm")
 				H.apply_damage(rand(0, damage), BRUTE, "r_arm")
-				H.Stun(2)//H.weakened = max(H.weakened,2)
-				H.updatehealth()
+				H.Stun(3)//.
+				H.updatehealth()//.
 
 // override to make sure nothing is hidden
 /turf/simulated/open/levelupdate()
@@ -111,3 +112,17 @@
 		else
 			user << "<span class='warning'>The plating is going to need some support.</span>"
 	return
+
+/turf/simulated/open/attack_hand(mob/user)//Climbing down.
+	if(!istype(below)) //make sure that there is actually something below
+		below = GetBelow(src)
+		if(!below)
+			return
+	if(user.resting)//Can't climb down if you're lying down.
+		return
+
+	playsound(user.loc, 'sound/effects/climb.ogg', 50, 1)
+	spawn(15)
+		user.visible_message("<span class='notice'>[user] climbs down.","<span class='notice'>You climb down.")
+		user.Move(below)
+		
