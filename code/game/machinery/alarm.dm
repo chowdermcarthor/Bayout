@@ -1257,3 +1257,19 @@ Just a object used in constructing fire alarms
 		usr << browse(null, "window=partyalarm")
 		return
 	return
+
+/obj/machinery/clock
+	name = "clock"
+	desc = "A device used to measure time."
+	icon = 'icons/obj/bureaucracy.dmi'
+	icon_state = "clock1"
+	anchored = 1
+	use_power = 0
+
+	New()
+		icon_state = pick("clock1","clock2","clock3","clock4","clock5","clock6")
+	
+
+/obj/machinery/clock/examine()
+	..()
+	usr << "The current time of the station is [stationtime2text()]."
