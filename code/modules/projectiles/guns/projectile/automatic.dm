@@ -268,6 +268,8 @@
 	slot_flags = SLOT_BELT
 	multi_aim = 1
 	burst_delay = 2
+	requires_two_hands = 1
+	wielded_icon = "assault-wielded"
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
