@@ -194,6 +194,7 @@
 
 /obj/item/device/flashlight/flare/attack_self(mob/user)
 	if(turn_on(user))
+		playsound(src.loc, turn_on_sound, 75, 1)
 		user.visible_message("<span class='notice'>\The [user] activates \the [src].</span>", "<span class='notice'>You pull the cord on the flare, activating it!</span>")
 
 /obj/item/device/flashlight/flare/proc/turn_on(var/mob/user)
