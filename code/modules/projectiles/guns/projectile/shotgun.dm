@@ -148,6 +148,7 @@
 	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
 	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
 	move_delay = null
+	requires_two_hands = 1
 	wielded_icon = "shotgun-wielded"
 	firemodes = list(
 		list(mode_name="fire one barrel at a time", burst=1),
