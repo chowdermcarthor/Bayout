@@ -56,7 +56,7 @@ var/religion_name = null
 		station_name += "Interstaion Two: " + name + " "//Gotta hardcode in the name because certain code don't work no more. Thanks Bay!
 
 	//For special days like christmas, easter, new-years etc ~Carn
-	if("Friday the 13th")
+	/*if("Friday the 13th")
 		name = pick("Mike","Friday","Evil","Myers","Murder","Deathly","Stabby")
 		station_name += name + " "
 		random = 13
@@ -65,7 +65,7 @@ var/religion_name = null
 		var/i = findtext(Holiday," ",1,0)
 		name = copytext(Holiday,1,i)
 		station_name += name + " "
-
+	*/
 	// Suffix
 	name = pick("Station", "Fortress", "Frontier", "Suffix", "Death-trap", "Space-hulk", "Lab", "Hazard","Spess Junk", "Fishery", "No-Moon", "Tomb", "Crypt", "Hut", "Monkey", "Bomb", "Trade Post", "Fortress", "Village", "Town", "City", "Edition", "Hive", "Complex", "Base", "Facility", "Depot", "Outpost", "Installation", "Drydock", "Observatory", "Array", "Relay", "Monitor", "Platform", "Construct", "Hangar", "Prison", "Center", "Port", "Waystation", "Factory", "Waypoint", "Stopover", "Hub", "HQ", "Office", "Object", "Fortification", "Colony", "Planet-Cracker", "Roost", "Fat Camp")
 	station_name += name + " "
