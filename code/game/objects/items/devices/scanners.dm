@@ -26,6 +26,7 @@ REAGENT SCANNER
 
 
 /obj/item/device/healthanalyzer/attack(mob/living/M as mob, mob/living/user as mob)
+	
 	if ((CLUMSY in user.mutations) && prob(50))
 		user << text("<span class='warning'>You try to analyze the floor's vitals!</span>")
 		for(var/mob/O in viewers(M, null))
@@ -39,6 +40,8 @@ REAGENT SCANNER
 	if (!(istype(usr, /mob/living/carbon/human) || ticker) && ticker.mode.name != "monkey")
 		usr << "<span class='warning'>You don't have the dexterity to do this!</span>"
 		return
+
+	playsound(M, 'sound/effects/Custom_healthanal.ogg', 50, 1, -1)
 	flick("health2", src)
 	user.visible_message("<span class='notice'>[user] has analyzed [M]'s vitals.</span>","<span class='notice'>You have analyzed [M]'s vitals.</span>")
 
@@ -107,6 +110,12 @@ REAGENT SCANNER
 					user.show_message(reagentdata[d])
 			if(unknown)
 				user.show_message("<span class='warning'>Warning: Unknown substance[(unknown>1)?"s":""] detected in subject's blood.</span>")
+		
+			//Starvation!
+		var/mob/living/carbon/human/H = M
+		if(H.nutrition < STARVATION_MIN)
+			user.show_message("<span class='danger'>Warning: Severe lack of essential nutriments detected in subject's blood.</span>")
+		
 		if(C.ingested && C.ingested.total_volume)
 			var/unknown = 0
 			for(var/datum/reagent/R in C.ingested.reagent_list)
