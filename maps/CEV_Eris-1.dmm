@@ -7486,7 +7486,7 @@
 "cNX" = (/obj/machinery/atmospherics/pipe/simple/hidden/supply,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/structure/cable/green{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor/carpet/bcarpet,/area/bridge/meeting_room)
 "cNY" = (/obj/structure/table/reinforced,/obj/item/weapon/flame/lighter/zippo,/turf/simulated/floor/carpet/bcarpet,/area/bridge/meeting_room)
 "cNZ" = (/obj/structure/bed/chair/comfy/black{dir = 8},/obj/effect/landmark/start{name = "Research Director"},/turf/simulated/floor/carpet/bcarpet,/area/bridge/meeting_room)
-"cOa" = (/obj/machinery/vending/cigarette,/obj/machinery/camera/network/command{tag = "icon-camera (NORTH)"; icon_state = "camera"; dir = 1},/turf/simulated/floor/tiled/dark,/area/bridge/meeting_room)
+"cOa" = (/obj/machinery/vending/cigarette,/obj/machinery/camera/network/command{tag = "icon-camera (NORTH)"; icon_state = "camera"; dir = 1},/obj/machinery/clock{pixel_x = 28},/turf/simulated/floor/tiled/dark,/area/bridge/meeting_room)
 "cOb" = (/obj/structure/table/woodentable,/obj/item/weapon/hand_tele,/turf/simulated/floor/wood,/area/crew_quarters/captain)
 "cOc" = (/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,/obj/machinery/atmospherics/pipe/simple/hidden/supply,/turf/simulated/floor/carpet/turcarpet,/area/crew_quarters/captain)
 "cOd" = (/obj/structure/bed/chair/wood{tag = "icon-wooden_chair (EAST)"; icon_state = "wooden_chair"; dir = 4},/turf/simulated/floor/carpet/turcarpet,/area/crew_quarters/captain)
@@ -11988,3 +11988,4 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 "}
+
