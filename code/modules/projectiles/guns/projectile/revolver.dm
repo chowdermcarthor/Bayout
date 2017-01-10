@@ -13,6 +13,8 @@
 	cocked_sound 	= 'sound/weapons/guns/interact/rev_cock.wav'
 	fire_sound = 'sound/weapons/guns/fire/revolver_fire.wav'
 	var/chamber_offset = 0 //how many empty chambers in the cylinder until you hit a round
+	magazine_based = 0
+
 
 /obj/item/weapon/gun/projectile/revolver/verb/spin_cylinder()
 	set name = "Spin cylinder"

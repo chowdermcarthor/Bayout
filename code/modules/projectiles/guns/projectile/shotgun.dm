@@ -18,6 +18,7 @@
 	var/recentpump = 0 // to prevent spammage
 	requires_two_hands = 1
 	wielded_icon = "rifle-wielded"
+	magazine_based = 0
 
 /obj/item/weapon/gun/projectile/shotgun/pump/consume_next_projectile()
 	if(chambered)

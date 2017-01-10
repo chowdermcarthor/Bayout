@@ -37,6 +37,7 @@
 	//var/magazine_states = 0
 	//var/list/icon_keys = list()		//keys
 	//var/list/ammo_states = list()	//values
+	var/magazine_based = 1
 
 /obj/item/weapon/gun/projectile/New()
 	..()
@@ -225,7 +226,8 @@
 	..(user)
 	if(ammo_magazine)
 		user << "It has \a [ammo_magazine] loaded."
-	user << "Has [getAmmo()] round\s remaining."
+	if(!magazine_based)
+		user << "Has [getAmmo()] round\s remaining."//No more being able to examine to tell how many shots if it's magazine based.
 	return
 
 /obj/item/weapon/gun/projectile/proc/getAmmo()
