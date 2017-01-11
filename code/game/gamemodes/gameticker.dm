@@ -143,6 +143,7 @@ var/global/datum/controller/gameticker/ticker
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
 
+	//close_jobs()//Makes certain jobs unselectable past roundstart. Unneeded atm.
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
 
@@ -164,6 +165,11 @@ var/global/datum/controller/gameticker/ticker
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
 	return 1
+
+/datum/controller/gameticker/proc/close_jobs()
+	for(var/datum/job/job in job_master.occupations)
+		if(job.title == "Captain")
+			job.total_positions = 0
 
 /datum/controller/gameticker
 	//station_explosion used to be a variable for every mob's hud. Which was a waste!
