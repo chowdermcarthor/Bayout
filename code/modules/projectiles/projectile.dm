@@ -80,7 +80,7 @@
 
 /obj/item/projectile/proc/on_impact(var/atom/A)
 	impact_effect(effect_transform)		// generate impact effect
-	playsound(src, "hitsound_wall", 50, 1, -2)
+	playsound(src, "ric_sound", 50, 1, -2)
 	return
 
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
@@ -180,6 +180,8 @@
 	if(result == PROJECTILE_FORCE_MISS)
 		if(!silenced)
 			visible_message("<span class='notice'>\The [src] misses [target_mob] narrowly!</span>")
+			playsound(target_mob, "miss_sound", 60, 1)
+	
 		return 0
 
 	//hit messages
@@ -187,6 +189,7 @@
 		target_mob << "<span class='danger'>You've been hit in the [parse_zone(def_zone)] by \the [src]!</span>"
 	else
 		visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
+
 
 	//admin logs
 	if(!no_attack_log)
