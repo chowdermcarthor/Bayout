@@ -1,3 +1,9 @@
+/obj/item/weapon/gun/projectile/shotgun
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
+	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
+
+
 /obj/item/weapon/gun/projectile/shotgun/pump
 	name = "shotgun"
 	desc = "The mass-produced W-T Remmington 29x shotgun is a favourite of police and security forces on many worlds. Useful for sweeping alleys."
@@ -13,8 +19,6 @@
 	load_method = SINGLE_CASING
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	handle_casings = HOLD_CASINGS
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
 	var/recentpump = 0 // to prevent spammage
 	requires_two_hands = 1
 	wielded_icon = "rifle-wielded"
@@ -35,6 +39,7 @@
 
 	if(chambered)//We have a shell in the chamber
 		chambered.loc = get_turf(src)//Eject casing
+		playsound(M, 'sound/weapons/guns/misc/shotgun_fall.wav', 100, 1)
 		chambered = null
 
 	if(loaded.len)
@@ -71,10 +76,9 @@
 	caliber = "shotgun"
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 1)
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
 	requires_two_hands = 1
 	wielded_icon = "rifle-wielded"
+	unload_sound = 'sound/weapons/guns/misc/shotgun_fall.wav'
 
 	burst_delay = 0
 	firemodes = list(
@@ -146,8 +150,6 @@
 	origin_tech = list(TECH_COMBAT = 4, TECH_MATERIAL = 4)
 	burst_delay = null
 	fire_delay = null
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
-	fire_sound = 'sound/weapons/guns/fire/shotgunp_fire.wav'
 	move_delay = null
 	requires_two_hands = 1
 	wielded_icon = "shotgun-wielded"
@@ -157,11 +159,13 @@
 		)
 
 /obj/item/weapon/gun/projectile/shotgun/regulator/proc/pump(mob/M as mob)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1) 
 	if(chambered)
 		if(!chambered.BB)
+			playsound(M, 'sound/weapons/guns/misc/shotgun_fall.wav', 100, 1)
 			chambered.loc = get_turf(src)//Eject casing
 			chambered = null
+			
 	if(!chambered)
 		if(loaded.len)
 			var/obj/item/ammo_casing/AC = loaded[1] //load next casing.
