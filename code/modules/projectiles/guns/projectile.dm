@@ -227,7 +227,7 @@
 	if(ammo_magazine)
 		user << "It has \a [ammo_magazine] loaded."
 	if(!magazine_based)
-		user << "Has [getAmmo()] round\s remaining."//No more being able to examine to tell how many shots if it's magazine based.
+		user << "[inexactAmmo()]"
 	return
 
 /obj/item/weapon/gun/projectile/proc/getAmmo()
@@ -239,6 +239,23 @@
 	if(chambered)
 		bullets += 1
 	return bullets
+
+/obj/item/weapon/gun/projectile/proc/inexactAmmo()
+	var/ammo = getAmmo()
+	var/message
+
+	var/mob/living/M = loc
+	if(istype(M))
+		if(M.l_hand == src || M.r_hand == src)//Gotta be holding it or this won't work.
+			if(ammo >= 6)
+				message = "It feels very heavy."
+			if(ammo > 3 && ammo < 6)
+				message = "It feels heavy."
+			if(ammo <= 3 && ammo != 0)
+				message = "It feels light."
+			if(ammo == 0)
+				message = "It feels empty."
+	return message
 
 /* Unneeded -- so far.
 //in case the weapon has firemodes and can't unload using attack_hand()
