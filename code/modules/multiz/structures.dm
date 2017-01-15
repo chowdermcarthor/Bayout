@@ -146,10 +146,10 @@
 	if (ismob(M) && M:client)
 		M:client.moving = 0
 
-/obj/structure/stairs/active/Click()
-	usr.client.moving = 1
-	usr.Move(locate(src.x, src.y, targetZ()))
-	usr.client.moving = 0
+///obj/structure/stairs/active/Click()
+//	usr.client.moving = 1
+//	usr.Move(locate(src.x, src.y, targetZ()))
+//	usr.client.moving = 0
 
 /obj/structure/stairs/active/bottom
 	icon_state = "rampdark"
