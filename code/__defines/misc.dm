@@ -220,3 +220,7 @@
 #define STARVATION_BRAIN_DAMAGE 2.5
 
 #define STARVATION_OXY_HEAL_RATE 1 //While starving, THIS much oxygen damage is restored per life tick (instead of the default 5)
+
+
+//ANNOUNSER! I THINK YOU MEAN ANNOUNCER!
+#define ANNOUNSER_NAME "CEV Eris System Announcer" 
