@@ -1,7 +1,6 @@
 /obj/item/weapon/gun/projectile/shotgun
 	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
-	fire_sound = 'sound/weapons/guns/fire/shotgun.ogg'
-	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.wav'
+	bulletinsert_sound 	= 'sound/weapons/guns/interact/shotgun_instert.ogg'
 
 
 /obj/item/weapon/gun/projectile/shotgun/pump
@@ -39,7 +38,7 @@
 
 	if(chambered)//We have a shell in the chamber
 		chambered.loc = get_turf(src)//Eject casing
-		playsound(M, 'sound/weapons/guns/misc/shotgun_fall.wav', 100, 1)
+		playsound(M, 'sound/weapons/guns/misc/shotgun_fall.ogg', 100, 1)
 		chambered = null
 
 	if(loaded.len)
@@ -78,7 +77,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
 	requires_two_hands = 1
 	wielded_icon = "rifle-wielded"
-	unload_sound = 'sound/weapons/guns/misc/shotgun_fall.wav'
+	unload_sound = 'sound/weapons/guns/misc/shotgun_fall.ogg'
 
 	burst_delay = 0
 	firemodes = list(
@@ -162,7 +161,7 @@
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1) 
 	if(chambered)
 		if(!chambered.BB)
-			playsound(M, 'sound/weapons/guns/misc/shotgun_fall.wav', 100, 1)
+			playsound(M, 'sound/weapons/guns/misc/shotgun_fall.ogg', 100, 1)
 			chambered.loc = get_turf(src)//Eject casing
 			chambered = null
 			
