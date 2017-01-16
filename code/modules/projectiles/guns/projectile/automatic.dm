@@ -11,10 +11,10 @@
 	ammo_type = /obj/item/ammo_casing/c9mm
 	multi_aim = 1
 	burst_delay = 2
-	fire_sound = 'sound/weapons/guns/fire/smg_fire.wav'
-	unload_sound = 'sound/weapons/guns/interact/smg_magout.wav'
-	reload_sound = 'sound/weapons/guns/interact/smg_magin.wav'
-	cocked_sound = 'sound/weapons/guns/interact/smg_cock.wav'
+	fire_sound = 'sound/weapons/guns/fire/smg_fire.ogg'
+	unload_sound = 'sound/weapons/guns/interact/smg_magout.ogg'
+	reload_sound = 'sound/weapons/guns/interact/smg_magin.ogg'
+	cocked_sound = 'sound/weapons/guns/interact/smg_cock.ogg'
 
 	firemodes = list(
 		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
@@ -47,9 +47,9 @@
 	magazine_type = /obj/item/ammo_magazine/a10mm
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.wav'
-	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.wav'
-	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.wav'
+	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/c20r/update_icon()
 	..()
@@ -71,10 +71,10 @@
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/c762
-	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.wav'
-	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.wav'
-	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.wav'
-	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.wav'
+	fire_sound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
+	unload_sound 	= 'sound/weapons/guns/interact/ltrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/ltrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/ltrifle_cock.ogg'
 	requires_two_hands = 1
 	wielded_icon = "assault-wielded"
 
@@ -121,15 +121,15 @@
 	caliber = "a556"
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 3)
 	ammo_type = "/obj/item/ammo_casing/a556"
-	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.wav'
+	fire_sound = 'sound/weapons/guns/fire/batrifle_fire.ogg'
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a556
 	auto_eject = 1
 	auto_eject_sound = 'sound/weapons/smg_empty_alarm.ogg'
-	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.wav'
-	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.wav'
-	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.wav'
+	unload_sound 	= 'sound/weapons/guns/interact/batrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/batrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/batrifle_cock.ogg'
 	requires_two_hands = 1
 	wielded_icon = "z8carbine-wielded"
 
@@ -197,10 +197,10 @@
 	ammo_type = "/obj/item/ammo_casing/a762"
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a762
-	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.wav'
-	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.wav'
-	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.wav'
-	fire_sound = 'sound/weapons/guns/fire/lmg_fire.wav'
+	unload_sound 	= 'sound/weapons/guns/interact/lmg_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/lmg_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/lmg_cock.ogg'
+	fire_sound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	requires_two_hands = 1
 	wielded_icon = "assault-wielded"
 
@@ -225,14 +225,14 @@
 /obj/item/weapon/gun/projectile/automatic/l6_saw/attack_self(mob/user as mob)
 	if(cover_open)
 		toggle_cover(user) //close the cover
-		playsound(src.loc, 'sound/weapons/guns/interact/lmg_close.wav', 100, 1)
+		playsound(src.loc, 'sound/weapons/guns/interact/lmg_close.ogg', 100, 1)
 	else
 		return ..() //once closed, behave like normal
 
 /obj/item/weapon/gun/projectile/automatic/l6_saw/attack_hand(mob/user as mob)
 	if(!cover_open && user.get_inactive_hand() == src)
 		toggle_cover(user) //open the cover
-		playsound(src.loc, 'sound/weapons/guns/interact/lmg_open.wav', 100, 1)
+		playsound(src.loc, 'sound/weapons/guns/interact/lmg_open.ogg', 100, 1)
 	else
 		return ..() //once open, behave like normal
 
