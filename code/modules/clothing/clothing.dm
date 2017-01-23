@@ -3,8 +3,9 @@
 	siemens_coefficient = 0.9
 	var/flash_protection = FLASH_PROTECTION_NONE	// Sets the item's level of flash protection.
 	var/tint = TINT_NONE							// Sets the item's level of visual impairment tint.
-	var/list/species_restricted = null 				//Only these species can wear this kit.
-	var/gunshot_residue //Used by forensics.
+	var/list/species_restricted = null				// Only these species can wear this kit.
+	var/gunshot_residue								// Used by forensics.
+	var/initial_name = "clothing"					// For coloring
 
 	var/list/accessories = list()
 	var/list/valid_accessory_slots
@@ -158,9 +159,6 @@ BLIND     // can't see anything
 		clipped = 1
 		name = "modified [name]"
 		desc = "[desc]<br>They have had the fingertips cut off of them."
-		if("exclude" in species_restricted)
-			species_restricted -= "Unathi"
-			species_restricted -= "Tajara"
 		return
 
 ///////////////////////////////////////////////////////////////////////
@@ -216,13 +214,6 @@ BLIND     // can't see anything
 	var/success
 	if(istype(user, /mob/living/silicon/robot/drone))
 		var/mob/living/silicon/robot/drone/D = user
-		if(D.hat)
-			success = 2
-		else
-			D.wear_hat(src)
-			success = 1
-	else if(istype(user, /mob/living/carbon/alien/diona))
-		var/mob/living/carbon/alien/diona/D = user
 		if(D.hat)
 			success = 2
 		else

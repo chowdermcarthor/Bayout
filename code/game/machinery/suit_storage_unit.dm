@@ -207,7 +207,7 @@
 	/*if(istype(H)) //Let's check if the guy's wearing electrically insulated gloves
 		if(H.gloves)
 			var/obj/item/clothing/gloves/G = H.gloves
-			if(istype(G,/obj/item/clothing/gloves/yellow))
+			if(istype(G,/obj/item/clothing/gloves/insulated))
 				protected = 1
 
 	if(!protected)
@@ -233,7 +233,7 @@
 	/*if(istype(H)) //Let's check if the guy's wearing electrically insulated gloves
 		if(H.gloves)
 			var/obj/item/clothing/gloves/G = H.gloves
-			if(istype(G,/obj/item/clothing/gloves/yellow) )
+			if(istype(G,/obj/item/clothing/gloves/insulated) )
 				protected = 1
 
 	if(!protected)
@@ -333,18 +333,16 @@
 		sleep(50)
 		if(src.OCCUPANT)
 			OCCUPANT.apply_effect(50, IRRADIATE)
-			var/obj/item/organ/diona/nutrients/rad_organ = locate() in OCCUPANT.internal_organs
-			if (!rad_organ)
-				if(src.issuperUV)
-					var/burndamage = rand(28,35)
-					OCCUPANT.take_organ_damage(0,burndamage)
-					if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
-						OCCUPANT.emote("scream")
-				else
-					var/burndamage = rand(6,10)
-					OCCUPANT.take_organ_damage(0,burndamage)
-					if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
-						OCCUPANT.emote("scream")
+			if(src.issuperUV)
+				var/burndamage = rand(28,35)
+				OCCUPANT.take_organ_damage(0,burndamage)
+				if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
+					OCCUPANT.emote("scream")
+			else
+				var/burndamage = rand(6,10)
+				OCCUPANT.take_organ_damage(0,burndamage)
+				if (!(OCCUPANT.species && (OCCUPANT.species.flags & NO_PAIN)))
+					OCCUPANT.emote("scream")
 		if(i==3) //End of the cycle
 			if(!src.issuperUV)
 				if(src.HELMET)
