@@ -4,11 +4,17 @@ mob/proc/flash_pain()
 		if (L.HUDtech.Find("pain"))
 			flick("pain",L.HUDtech["pain"])
 
-/mob/proc/flash_weak_pain()//Why the fuck wasn't that there before?
+mob/proc/flash_weak_pain()//Why the fuck wasn't that there before?
 	if(istype(src,/mob/living))
 		var/mob/living/L = src
 		if (L.HUDtech.Find("pain"))
 			flick("weak_pain",L.HUDtech["pain"])
+
+mob/proc/flash_weakest_pain()
+	if(istype(src,/mob/living))
+		var/mob/living/L = src
+		if (L.HUDtech.Find("pain"))
+			flick("weakest_pain",L.HUDtech["pain"])
 
 mob/var/list/pain_stored = list()
 mob/var/last_pain_message = ""
@@ -31,7 +37,7 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 	if(amount > 50 && prob(amount / 5))
 		src:drop_item()
 	var/msg
-	if(burning)
+	/*if(burning)
 		switch(amount)
 			if(1 to 10)
 				//msg = "\red <b>Your [partname] burns.</b>"
@@ -41,15 +47,16 @@ mob/living/carbon/proc/pain(var/partname, var/amount, var/force, var/burning = 0
 			if(91 to 10000)
 				flash_pain()
 				//msg = "\red <b><font size=3>OH GOD! Your [partname] is on fire!</font></b>"
-	else
-		switch(amount)
-			if(1 to 10)
-				//msg = "<b>Your [partname] hurts.</b>"
-			if(11 to 90)
-				flash_weak_pain()
-				//msg = "<b><font size=2>Your [partname] hurts badly.</font></b>"
-			if(91 to 10000)
-				flash_pain()
+	else*/
+	switch(amount)
+		if(1 to 10)
+			flash_weakest_pain()
+			//msg = "<b>Your [partname] hurts.</b>"
+		if(11 to 90)
+			flash_weak_pain()
+			//msg = "<b><font size=2>Your [partname] hurts badly.</font></b>"
+		if(91 to 10000)
+			flash_pain()
 				//msg = "<b><font size=3>OH GOD! Your [partname] is hurting terribly!</font></b>"
 	if(msg && (msg != last_pain_message || prob(10)))
 		last_pain_message = msg
