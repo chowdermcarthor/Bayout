@@ -100,6 +100,7 @@ mob/living/carbon/human/proc/handle_pain()
 			maxdam = dam
 	if(damaged_organ)
 		pain(damaged_organ.name, maxdam, 0)
+		damaged_organ.pain = maxdam
 
 	// Damage to internal organs hurts a lot.
 	for(var/obj/item/organ/I in internal_organs)

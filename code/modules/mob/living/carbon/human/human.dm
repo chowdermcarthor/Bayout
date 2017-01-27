@@ -1313,7 +1313,7 @@ var/list/rank_prefix = list(\
 			var/status = ""
 
 			if(H.painchecks())//Can we feel pain? If we can then it tells us how much pain our limbs are in.
-				organpain = org.get_damage()
+				organpain = org.pain//get_damage()
 				if(organpain > 0)
 					status = " <small>pain</small>"
 				if(organpain > 5)
@@ -1327,6 +1327,17 @@ var/list/rank_prefix = list(\
 				status = " MISSING!"
 			
 			
+			//This is all spaghetti.
+			if(organpain && (org.status & ORGAN_BLEEDING))//Is the limb bleeding and hurt?
+				status += " || <b>BLEEDING!</b>"
+
+			if((!organpain) && (org.status & ORGAN_BLEEDING))//Or just bleeding.
+				status = "<b> BLEEDING!</b>"
+
+			if((!organpain) && (org.status & ORGAN_BROKEN) && (org.status & ORGAN_BLEEDING))//Or is it bleeding and broken but you're not hurt.
+				status = "<b>BLEEDING! || BROKEN!</b>"
+
+
 			if(organpain && (org.status & ORGAN_BROKEN))//Is the limb broken and hurt?
 				status += " || <b>BROKEN!</b>"
 

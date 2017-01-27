@@ -56,6 +56,7 @@
 	var/dislocated = 0    // If you target a joint, you can dislocate the limb, causing temporary damage to the organ.
 	var/can_grasp //It would be more appropriate if these two were named "affects_grasp" and "affects_stand" at this point
 	var/can_stand
+	var/pain = 0
 
 /obj/item/organ/external/Destroy()
 	if(parent && parent.children)
@@ -171,6 +172,7 @@
 
 /obj/item/organ/external/update_health()
 	damage = min(max_damage, (brute_dam + burn_dam))
+	pain = min(max_damage, (brute_dam + burn_dam))
 	return
 
 
