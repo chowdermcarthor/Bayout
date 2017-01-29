@@ -93,6 +93,7 @@
 	item_state = "knife"
 	applies_material_colour = 0
 	unbreakable = 1
+	drawsound = 'sound/items/unholster_knife.ogg'
 
 /obj/item/weapon/material/kitchen/utensil/knife/attack(target as mob, mob/living/user as mob)
 	if ((CLUMSY in user.mutations) && prob(50))

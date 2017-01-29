@@ -79,6 +79,7 @@
 	var/tmp/mob/living/last_moved_mob //Used to fire faster at more than one person.
 	var/tmp/told_cant_shoot = 0 //So that it doesn't spam them with the fact they cannot hit them.
 	var/tmp/lock_time = -100
+	drawsound = 'sound/items/unholster.ogg'
 
 /obj/item/weapon/gun/New()
 	..()
@@ -101,9 +102,6 @@
 				update_icon(ignore_inhands=1) // In case item_state is set somewhere else.
 	..()
 
-/obj/item/weapon/gun/pickup(mob/user)
-	user.visible_message("\red <b>[user] grabs a weapon!</b>")
-	playsound(user, 'sound/items/unholster.ogg', 50, 1)
 
 //Checks whether a given mob can use the gun
 //Any checks that shouldn't result in handle_click_empty() being called if they fail should go here.

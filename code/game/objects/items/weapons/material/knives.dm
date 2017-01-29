@@ -74,6 +74,7 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "render"
 	applies_material_colour = 0
+	drawsound = 'sound/items/unholster_knife.ogg'
 
 /obj/item/weapon/material/knife/butch
 	name = "butcher's cleaver"
@@ -82,3 +83,4 @@
 	desc = "A huge thing used for chopping and chopping up meat. This includes clowns and clown-by-products."
 	force_divisor = 0.25 // 15 when wielded with hardness 60 (steel)
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	drawsound = 'sound/items/unholster_knife.ogg'
