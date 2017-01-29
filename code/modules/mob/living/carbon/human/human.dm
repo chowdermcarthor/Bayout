@@ -1313,7 +1313,7 @@ var/list/rank_prefix = list(\
 			var/status = ""
 
 			if(H.painchecks())//Can we feel pain? If we can then it tells us how much pain our limbs are in.
-				organpain = H.get_damage()
+				organpain = org.get_damage()
 				if(organpain > 0)
 					status = " <small>pain</small>"
 				if(organpain > 5)
