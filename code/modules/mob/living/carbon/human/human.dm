@@ -1305,7 +1305,7 @@ var/list/rank_prefix = list(\
 	var/organpain = 0
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = usr
-		src << "\blue You chck yourself for injuries."
+		src << "\blue You check yourself for injuries."
 		if(!stat)
 			src.visible_message("\blue [src] examines [src.gender==MALE?"himself":"herself"].")
 
@@ -1313,7 +1313,7 @@ var/list/rank_prefix = list(\
 			var/status = ""
 
 			if(H.painchecks())//Can we feel pain? If we can then it tells us how much pain our limbs are in.
-				organpain = org.pain//get_damage()
+				organpain = get_damage()
 				if(organpain > 0)
 					status = " <small>pain</small>"
 				if(organpain > 5)
