@@ -210,8 +210,8 @@ its easier to just keep the beam vertical.
 			f_name += "<span class='danger'>blood-stained</span> [name][infix]!"
 		else
 			f_name += "oil-stained [name][infix]."
-
-	user.visible_message("<font size=1>[user.name] looks at [src].</font>")
+	if(!isobserver(user))
+		user.visible_message("<font size=1>[user.name] looks at [src].</font>")
 	user << "\icon[src] That's [f_name] [suffix]"
 	user << desc
 
