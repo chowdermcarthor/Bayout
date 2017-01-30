@@ -1305,7 +1305,6 @@ var/list/rank_prefix = list(\
 	var/organpain = 0
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = usr
-		src << "\blue You check yourself for injuries."
 		if(!stat)
 			src.visible_message("\blue [src] examines [src.gender==MALE?"himself":"herself"].")
 
