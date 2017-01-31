@@ -1312,7 +1312,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			T.add_blood(owner)
 			playsound(owner, "trauma", 75, 0)
 			var/turf/target = get_turf(owner.loc)
-			var/range = rand(2,T.throw_range)
+			var/range = rand(1, 3)//T.throw_range)
 			for(var/i = 1; i < range; i++)
 				var/turf/new_turf = get_step(target, throw_dir)
 				target = new_turf
