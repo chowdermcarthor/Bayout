@@ -89,7 +89,9 @@
 	)
 
 	if(do_after(M, 10, src))
+		playsound(src.loc, 'sound/effects/ladder.ogg', 50, 1, -1)
 		M.Move(T)
+
 
 
 
