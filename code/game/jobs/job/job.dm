@@ -41,6 +41,8 @@
 	var/glasses = null
 	var/suit_store = null
 
+	var/start_only = 0 //If set to one the job will not be availible after roundstart.
+
 	var/list/backpacks = list(
 		/obj/item/weapon/storage/backpack,
 		/obj/item/weapon/storage/backpack/satchel_norm,

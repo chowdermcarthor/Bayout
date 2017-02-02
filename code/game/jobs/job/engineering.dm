@@ -1,4 +1,4 @@
-/datum/job/chief_engineer
+/*/datum/job/chief_engineer
 	title = "Chief Engineer"
 	flag = CHIEF
 	head_position = 1
@@ -41,16 +41,17 @@
 		/obj/item/weapon/storage/backpack/satchel_eng,\
 		/obj/item/weapon/storage/backpack/satchel
 		)
-
+*/
 
 /datum/job/engineer
-	title = "Vessel Engineer"
+	title = "Vault Engineer"
 	flag = ENGINEER
 	department = "Engineering"
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
+	start_only = 1
 	supervisors = "the chief engineer"
 	selection_color = "#fff5cc"
 	economic_modifier = 5
@@ -80,7 +81,7 @@
 		)
 
 
-/datum/job/atmos
+/*/datum/job/atmos
 	title = "Atmospheric Technician"
 	flag = ATMOSTECH
 	department = "Engineering"
@@ -105,3 +106,4 @@
 	belt = /obj/item/weapon/storage/belt/utility/atmostech
 	ear = /obj/item/device/radio/headset/headset_eng
 	shoes = /obj/item/clothing/shoes/jackboots
+	*/

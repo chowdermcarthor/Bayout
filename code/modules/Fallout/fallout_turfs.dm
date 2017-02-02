@@ -47,7 +47,6 @@
 	desc = "Watch your step, partner."
 	icon = 'icons/obj/structures/pit.dmi'
 	icon_state = "pit1"
-	//blend_mode = BLEND_MULTIPLY
 	density = 0
 	anchored = 1
 	var/open = 1

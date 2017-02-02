@@ -7,6 +7,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	start_only = 1
 	supervisors = "the captain"
 	selection_color = "#ffddff"
 	idtype = /obj/item/weapon/card/id/rd
@@ -23,7 +24,7 @@
 	minimal_player_age = 14
 	ideal_character_age = 50
 
-	uniform = /obj/item/clothing/under/rank/research_director
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/research_director
 	pda = /obj/item/device/pda/heads/rd
 	ear = /obj/item/device/radio/headset/heads/rd
 	shoes = /obj/item/clothing/shoes/laceup
@@ -46,6 +47,7 @@
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 3
+	start_only = 1
 	supervisors = "the research director"
 	selection_color = "#ffeeff"
 	economic_modifier = 7
@@ -55,7 +57,7 @@
 	idtype = /obj/item/weapon/card/id/sci
 	minimal_player_age = 14
 
-	uniform = /obj/item/clothing/under/rank/scientist
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/scientist
 	pda = /obj/item/device/pda/science
 	ear = /obj/item/device/radio/headset/headset_sci
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -67,6 +69,7 @@
 		/obj/item/weapon/storage/backpack/satchel
 		)
 
+/*
 /datum/job/xenobiologist
 	title = "Xenobiologist"
 	flag = XENOBIOLOGIST
@@ -95,7 +98,7 @@
 		/obj/item/weapon/storage/backpack/satchel_tox,\
 		/obj/item/weapon/storage/backpack/satchel
 		)
-
+*/
 /datum/job/roboticist
 	title = "Roboticist"
 	flag = ROBOTICIST
@@ -104,6 +107,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	start_only = 1
 	supervisors = "research director"
 	selection_color = "#ffeeff"
 	economic_modifier = 5
@@ -113,7 +117,7 @@
 	idtype = /obj/item/weapon/card/id/dkgrey
 	minimal_player_age = 7
 
-	uniform = /obj/item/clothing/under/rank/roboticist
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/roboticist
 	pda = /obj/item/device/pda/roboticist
 	gloves = /obj/item/clothing/gloves/thick
 	ear = /obj/item/device/radio/headset/headset_sci

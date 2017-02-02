@@ -290,3 +290,81 @@
 	icon_state = (ammo_magazine)? "SMG-IS" : "SMG-IS-empty"
 	overlays.Cut()
 	update_charge()
+
+
+//FALLOUT GUNS
+/obj/item/weapon/gun/projectile/automatic/smg10mm
+	name = "10mm smg"
+	desc = "It's like a 10mm pistol, only automatic."
+	icon_state = "smg10mm"
+	item_state = "arifle"
+	w_class = 3
+	force = WEAPON_FORCE_PAINFULL
+	caliber = "10mm"
+	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 2)
+	fire_sound = 'sound/weapons/guns/fire/10mm_fire_01.ogg'
+	slot_flags = SLOT_BELT|SLOT_BACK
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/smg10mm
+	requires_two_hands = 1
+	wielded_icon = "assault-wielded"
+	
+	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
+	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
+	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2),       dispersion=list(0.0, 0.6, 0.6)),
+		list(mode_name="short bursts", 	burst=5, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2,-2,-3), dispersion=list(0.6, 1.0, 1.0, 1.0, 1.2)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/smg10mm/update_icon(var/ignore_inhands)
+	..()
+	icon_state = (ammo_magazine)? "smg10mm" : "smg10mm-e"
+	if(!ignore_inhands) update_held_icon()
+
+/obj/item/weapon/gun/projectile/ap10mm
+	name = "10mm pistol"
+	desc = "No wastelander is complete without one."
+	icon_state = "n99"
+	item_state = "gun"
+	w_class = 3
+	caliber = "10mm"
+	silenced = 0
+	slot_flags = SLOT_BELT
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	fire_sound = 'sound/weapons/guns/fire/10mm_fire_02.ogg'
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/ap10mm
+
+/obj/item/weapon/gun/projectile/ap10mm/overseer
+	name = "The Overseer Special"
+	desc = "If you're holding onto this and you're not the Overser, something has gone horrible wrong."
+
+//FALLOUT AMMO
+
+
+/obj/item/ammo_magazine/smg10mm
+	name = "smg magazine (10mm)"
+	icon_state = "c762"
+	mag_type = MAGAZINE
+	caliber = "10mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1800)
+	ammo_type = /obj/item/ammo_casing/a10mm
+	max_ammo = 30
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/ap10mm
+	name = "magazine (10mm)"
+	icon_state = "32trauma"
+	origin_tech = list(TECH_COMBAT = 2)
+	mag_type = MAGAZINE
+	caliber = "10mm"
+	matter = list(DEFAULT_WALL_MATERIAL = 1500)
+	ammo_type = /obj/item/ammo_casing/a10mm
+	max_ammo = 12
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/ap10mm/empty
+	initial_ammo = 0

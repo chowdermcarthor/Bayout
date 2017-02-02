@@ -125,11 +125,11 @@
 
 				bloodDNA = null
 
-			//Shoe sounds
+			//Shoe sounds. This has got to be the worst fucking possible way to do them too.
 			if 		(istype(src, /turf/simulated/floor/grass))
 				footstepsound = "grassfootsteps"
-			//else 	if(istype(src, /turf/stalker/floor/tropa))//Not needed for now.
-			//	footstepsound = "sandfootsteps"
+			else 	if(istype(src, /turf/simulated/floor/wasteland/desert))//Sand sfx sound like complete shit.
+				footstepsound = "dirtfootsteps"
 			else 	if(istype(src, /turf/simulated/floor/beach/water))
 				footstepsound = "waterfootsteps"
 			else 	if(istype(src, /turf/simulated/floor/wood))

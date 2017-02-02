@@ -7,11 +7,12 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	start_only = 1
 	supervisors = "the First Officer"
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	minimal_access = list(access_bar)
-	uniform = /obj/item/clothing/under/rank/bartender
+	uniform = /obj/item/clothing/under/f13/vault/v13// /obj/item/clothing/under/rank/bartender
 	pda = /obj/item/device/pda/bar
 	ear = /obj/item/device/radio/headset/headset_service
 
@@ -41,13 +42,14 @@
 
 
 /datum/job/chef
-	title = "Chef"
+	title = "Cook"
 	flag = CHEF
 	department = "Civilian"
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	start_only = 1
 	supervisors = "the First Officer"
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
@@ -55,7 +57,7 @@
 	alt_titles = list("Cook")
 	idtype = /obj/item/weapon/card/id/ltgrey
 
-	uniform = /obj/item/clothing/under/rank/chef
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/chef
 	shoes = /obj/item/clothing/shoes/black
 	pda = /obj/item/device/pda/chef
 	hat = /obj/item/clothing/head/chefhat
@@ -72,6 +74,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
+	start_only = 1
 	supervisors = "the First Officer"
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
@@ -79,7 +82,7 @@
 	alt_titles = list("Hydroponicist")
 	idtype = /obj/item/weapon/card/id/hydro
 
-	uniform = /obj/item/clothing/under/rank/hydroponics
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/hydroponics
 	pda = /obj/item/device/pda/botanist
 	suit = /obj/item/clothing/suit/apron
 	gloves = /obj/item/clothing/gloves/botanic_leather
@@ -106,6 +109,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	start_only = 1
 	supervisors = "the First Officer"
 	selection_color = "#dddddd"
 	economic_modifier = 5
@@ -115,7 +119,7 @@
 	ideal_character_age = 40
 
 
-	uniform = /obj/item/clothing/under/rank/cargotech
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/qm_coat
 	shoes = /obj/item/clothing/shoes/color/brown
 	pda = /obj/item/device/pda/quartermaster
@@ -134,13 +138,14 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	start_only = 1
 	supervisors = "the quartermaster and the First Officer"
 	selection_color = "#dddddd"
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting)
 	idtype = /obj/item/weapon/card/id/car
 
-	uniform = /obj/item/clothing/under/rank/cargotech
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/cargotech
 	suit = /obj/item/clothing/suit/storage/cargo_jacket
 	pda = /obj/item/device/pda/cargo
 	ear = /obj/item/device/radio/headset/headset_cargo
@@ -148,7 +153,7 @@
 
 
 /datum/job/mining
-	title = "Shaft Miner"
+	title = "Miner"
 	flag = MINER
 	department = "Cargo"
 	department_flag = CIVILIAN
@@ -158,12 +163,13 @@
 	supervisors = "the quartermaster and the First Officer"
 	selection_color = "#dddddd"
 	economic_modifier = 5
+	start_only = 1
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_mining, access_mining_station, access_mailsorting)
 	alt_titles = list("Drill Technician","Prospector")
 	idtype = /obj/item/weapon/card/id/car
 
-	uniform = /obj/item/clothing/under/rank/miner
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/miner
 	pda = /obj/item/device/pda/shaftminer
 	ear = /obj/item/device/radio/headset/headset_cargo
 	survival_gear = /obj/item/weapon/storage/box/engineer
@@ -174,7 +180,7 @@
 		)
 
 
-
+/*
 /datum/job/clown
 	title = "Clown"
 	flag = CLOWN
@@ -231,16 +237,16 @@
 	uniform = /obj/item/clothing/under/mime
 	pda = /obj/item/device/pda/mime
 	hat = /obj/item/clothing/head/beret
-	gloves = /obj/item/clothing/gloves/color/white
+	gloves = /obj/item/clothing/gloves/white
 	mask = /obj/item/clothing/mask/gas/mime
 	ear = /obj/item/device/radio/headset/headset_service
-
+*/
 /*
 	put_in_backpack = list(\
 		/obj/item/toy/crayon/mime,\
 		/obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing
 	)
-*/
+
 
 	equip(var/mob/living/carbon/human/H)
 		if(!..())	return 0
@@ -250,7 +256,7 @@
 //		H.mind.special_verbs += /client/proc/mimewall
 		H.miming = 1
 		return 1
-
+*/
 
 /datum/job/janitor
 	title = "Janitor"
@@ -262,15 +268,16 @@
 	spawn_positions = 1
 	supervisors = "the First Officer"
 	selection_color = "#dddddd"
+	start_only = 1
 	access = list(access_janitor, access_maint_tunnels)
 	minimal_access = list(access_janitor, access_maint_tunnels)
 
-	uniform = /obj/item/clothing/under/rank/janitor
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/janitor
 	pda = /obj/item/device/pda/janitor
 	ear = /obj/item/device/radio/headset/headset_service
 
 
-
+/*
 //More or less assistants
 /datum/job/librarian
 	title = "Librarian"
@@ -290,7 +297,7 @@
 	uniform = /obj/item/clothing/under/librarian
 	pda = /obj/item/device/pda/librarian
 	hand = /obj/item/weapon/barcodescanner
-
+*/
 
 
 //var/global/lawyer = 0//Checks for another lawyer //This changed clothes on 2nd lawyer, both IA get the same dreds.
@@ -309,7 +316,7 @@
 //	minimal_access = list(access_lawyer, access_sec_doors, access_heads)
 //
 //	uniform = /obj/item/clothing/under/rank/internalaffairs
-//	shoes = /obj/item/clothing/shoes/color/brown
+//	shoes = /obj/item/clothing/shoes/brown
 //	pda = /obj/item/device/pda/lawyer
 //	ear = /obj/item/device/radio/headset/headset_sec
 //	hand = /obj/item/weapon/storage/briefcase

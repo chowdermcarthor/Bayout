@@ -1,7 +1,7 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 /datum/job/captain
-	title = "Captain"
+	title = "Overseer"
 	flag = CAPTAIN
 	department = "Command"
 	head_position = 1
@@ -9,7 +9,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "company officials and Corporate Regulations"
+	start_only = 1
+	supervisors = "your good will."//"company officials and Corporate Regulations"
 	selection_color = "#ccccff"
 	idtype = /obj/item/weapon/card/id/gold
 	req_admin_notify = 1
@@ -22,11 +23,12 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 
 	implanted = 1
-	uniform = /obj/item/clothing/under/rank/captain
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/captain
 	shoes = /obj/item/clothing/shoes/color/brown
 	pda = /obj/item/device/pda/captain
-	hat = /obj/item/clothing/head/caphat
+	//hat = /obj/item/clothing/head/caphat
 	ear = /obj/item/device/radio/headset/heads/captain
+	belt = /obj/item/weapon/gun/projectile/ap10mm/overseer
 	glasses = /obj/item/clothing/glasses/sunglasses
 
 	backpacks = list(
@@ -39,20 +41,21 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		/obj/item/weapon/storage/box/ids \
 	)
 
+	/*
 	equip(var/mob/living/carbon/human/H)
 		if(!..())	return 0
 		if(H.age>49)
 			var/obj/item/clothing/under/U = H.w_uniform
 			if(istype(U)) U.accessories += new /obj/item/clothing/accessory/medal/gold/captain(U)
 		return 1
-
+	*/
 	get_access()
 		return get_all_station_access()
 
 
 
 /datum/job/hop
-	title = "First Officer"
+	title = "The Manager"
 	flag = HOP
 	department = "Civilian"
 	head_position = 1
@@ -60,7 +63,8 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	start_only = 1
+	supervisors = "the overseer"
 	selection_color = "#ddddff"
 	idtype = /obj/item/weapon/card/id/hop
 	req_admin_notify = 1
@@ -69,7 +73,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	ideal_character_age = 50
 
 	implanted = 1
-	uniform = /obj/item/clothing/under/rank/head_of_personnel
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/head_of_personnel
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/armor/vest
 	gloves = /obj/item/clothing/gloves/thick

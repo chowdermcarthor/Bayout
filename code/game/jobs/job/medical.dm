@@ -1,5 +1,5 @@
 /datum/job/cmo
-	title = "Chief Medical Officer"
+	title = "Surgeon General"
 	flag = CMO
 	head_position = 1
 	department = "Medical"
@@ -7,7 +7,8 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	start_only = 1
+	supervisors = "the overseer"
 	selection_color = "#ffddf0"
 	idtype = /obj/item/weapon/card/id/cmo
 	req_admin_notify = 1
@@ -22,7 +23,7 @@
 	minimal_player_age = 10
 	ideal_character_age = 50
 
-	uniform = /obj/item/clothing/under/rank/chief_medical_officer
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/chief_medical_officer
 	shoes = /obj/item/clothing/shoes/laceup
 	pda = /obj/item/device/pda/heads/cmo
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
@@ -41,22 +42,23 @@
 		return 1
 
 /datum/job/doctor
-	title = "Medical Doctor"
+	title = "Vault Doctor"
 	flag = DOCTOR
 	department = "Medical"
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 3
+	start_only = 1
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	economic_modifier = 7
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_virology)
-	alt_titles = list("Surgeon","Emergency Physician","Virologist")
+	alt_titles = list("Surgeon")//"Emergency Physician","Virologist")
 	idtype = /obj/item/weapon/card/id/med
 
-	uniform = /obj/item/clothing/under/rank/medical
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/medical
 	shoes = /obj/item/clothing/shoes/laceup
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat
 	pda = /obj/item/device/pda/medical
@@ -77,7 +79,7 @@
 				if("Emergency Physician")
 					H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
 				if("Surgeon")
-					H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical/blue(H), slot_w_uniform)
+					//H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical/blue(H), slot_w_uniform)
 					H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/toggle/labcoat(H), slot_wear_suit)
 					H.equip_to_slot_or_del(new /obj/item/clothing/head/surgery/blue(H), slot_head)
 				if("Virologist")
@@ -102,6 +104,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	start_only = 1
 	supervisors = "the chief medical officer"
 	selection_color = "#ffeef0"
 	economic_modifier = 5
@@ -111,7 +114,7 @@
 	idtype = /obj/item/weapon/card/id/chem
 
 
-	uniform = /obj/item/clothing/under/rank/chemist
+	uniform = /obj/item/clothing/under/f13/vault/v13///obj/item/clothing/under/rank/chemist
 	shoes = /obj/item/clothing/shoes/laceup
 	pda = /obj/item/device/pda/chemist
 	ear = /obj/item/device/radio/headset/headset_med
@@ -125,7 +128,7 @@
 
 
 
-/datum/job/geneticist
+/*/datum/job/geneticist
 	title = "Geneticist"
 	flag = GENETICIST
 	department = "Medical"
@@ -245,3 +248,4 @@
 		/obj/item/weapon/storage/backpack/satchel_med,\
 		/obj/item/weapon/storage/backpack/satchel
 		)
+*/

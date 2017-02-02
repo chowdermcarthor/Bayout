@@ -27,12 +27,14 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	start_only = 1
 	supervisors = "your laws and the AI"	//Nodrak
 	selection_color = "#ddffdd"
 	minimal_player_age = 1
 	alt_titles = list("Android", "Robot")
 	account_allowed = 0
 	economic_modifier = 0
+
 
 	equip(var/mob/living/carbon/human/H)
 		if(!H)	return 0

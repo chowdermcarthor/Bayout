@@ -143,7 +143,7 @@ var/global/datum/controller/gameticker/ticker
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
 
-	//close_jobs()//Makes certain jobs unselectable past roundstart. Unneeded atm.
+	close_jobs()//Makes certain jobs unselectable past roundstart. Unneeded atm.
 	//start_events() //handles random events and space dust.
 	//new random event system is handled from the MC.
 
@@ -168,7 +168,7 @@ var/global/datum/controller/gameticker/ticker
 
 /datum/controller/gameticker/proc/close_jobs()
 	for(var/datum/job/job in job_master.occupations)
-		if(job.title == "Captain")
+		if(job.start_only)
 			job.total_positions = 0
 
 /datum/controller/gameticker
