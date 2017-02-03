@@ -365,7 +365,7 @@ var/global/list/additional_antag_types = list()
 				intercepttext += "<b>[M.name]</b>, the <b>[M.mind.assigned_role]</b> <br>"
 
 	//New message handling
-	post_comm_message("Cent. Com. Status Summary", intercepttext)
+	//post_comm_message("Cent. Com. Status Summary", intercepttext)no pls
 
 	//world << sound('sound/AI/commandreport.ogg') pls no
 
