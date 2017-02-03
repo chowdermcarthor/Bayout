@@ -367,7 +367,7 @@ var/global/list/additional_antag_types = list()
 	//New message handling
 	post_comm_message("Cent. Com. Status Summary", intercepttext)
 
-	world << sound('sound/AI/commandreport.ogg')
+	//world << sound('sound/AI/commandreport.ogg') pls no
 
 /datum/game_mode/proc/get_players_for_role(var/role, var/antag_id)
 	var/list/players = list()
