@@ -132,7 +132,7 @@
 	caliber = "a556"
 	matter = list(DEFAULT_WALL_MATERIAL = 1800)
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 10
+	max_ammo = 20
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/a556/empty
@@ -287,3 +287,54 @@
 	caliber = ".32"
 	max_ammo = 7
 	multiple_sprites = 1
+
+/obj/item/ammo_magazine/tommygunm45
+	name = "drum magazine (.45)"
+	icon_state = "drum45"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	mag_type = MAGAZINE
+	ammo_mag = "45_smg"
+	max_ammo = 50
+
+/obj/item/ammo_magazine/m556
+	name = "toploader magazine (5.56mm)"
+	icon_state = "5.56m"
+	origin_tech = "combat=5;syndicate=1"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	ammo_mag = "top1_ar"
+	max_ammo = 30
+	mag_type = MAGAZINE
+	multiple_sprites = 2
+
+/obj/item/ammo_magazine/m556_20
+	name = "5.56 magazine (Match Grade 5.56mm)"
+	icon_state = "75"
+	origin_tech = "combat=3"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 20
+	mag_type = MAGAZINE
+	ammo_mag = "20_ar"
+	multiple_sprites = 2
+
+/obj/item/ammo_magazine/m556_20/ap
+	name = "5.56 magazine (Armour Piercing 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556ap
+
+/obj/item/ammo_magazine/m556_20/tx
+	name = "5.56 magazine (Toxin Tipped 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556tox
+
+/obj/item/ammo_magazine/m556_20/inc
+	name = "5.56 magazine (Incendiary 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556inc
+
+/obj/item/ammo_magazine/m556_20/surplus
+	name = "5.56 magazine (Surplus 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556surplus
+
+/obj/item/ammo_magazine/m556_20/training
+	name = "5.56 training magazine (Dummy 5.56)"
+	ammo_type = /obj/item/ammo_casing/a556training

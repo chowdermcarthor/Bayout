@@ -308,7 +308,7 @@
 	magazine_type = /obj/item/ammo_magazine/smg10mm
 	requires_two_hands = 1
 	wielded_icon = "assault-wielded"
-	
+
 	unload_sound 	= 'sound/weapons/guns/interact/sfrifle_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/sfrifle_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/sfrifle_cock.ogg'
@@ -341,6 +341,96 @@
 /obj/item/weapon/gun/projectile/ap10mm/overseer
 	name = "The Overseer Special"
 	desc = "If you're holding onto this and you're not the Overser, something has gone horrible wrong."
+
+
+/obj/item/weapon/gun/projectile/automatic/tommygun
+	name = "\improper Thompson SMG"
+	desc = "Based on the classic 'Chicago Typewriter'."
+	icon_state = "tommygun"
+	item_state = "shotgun"
+	ammo_mag = "45_smg"
+	w_class = 5
+	slot_flags = 0
+	caliber = ".45"
+	requires_two_hands = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	magazine_type = /obj/item/ammo_magazine/tommygunm45
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
+	burst = 4
+	fire_delay = 1
+
+/obj/item/weapon/gun/projectile/automatic/ar
+	name = "\improper Heavy assault rifle'"
+	desc = "A robust assault rile used by US forces in Anchorage."
+	icon_state = "arg"
+	item_state = "arg"
+	ammo_mag = "top1_ar"
+	slot_flags = 0
+	requires_two_hands = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	magazine_type = /obj/item/ammo_magazine/m556
+	load_method = MAGAZINE
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2),       dispersion=list(0.0, 0.6, 0.6)),
+		list(mode_name="short bursts", 	burst=5, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2,-2,-3), dispersion=list(0.6, 1.0, 1.0, 1.0, 1.2)),
+		)
+	burst = 3
+	fire_delay = 1
+
+
+/obj/item/weapon/gun/projectile/automatic/assault_rifle
+	name = "Assault Rifle"
+	desc = "An Assault Rifle. An old military model, out of use around the time of the war."
+	icon_state = "assault_rifle"
+	item_state = "assault_rifle"
+	ammo_mag = "top1_ar"
+	caliber = "a556"
+	load_method = MAGAZINE
+	slot_flags = 0
+	requires_two_hands = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	magazine_type = /obj/item/ammo_magazine/m556
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null),
+		list(mode_name="3-round bursts", burst=3, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2),       dispersion=list(0.0, 0.6, 0.6)),
+		list(mode_name="short bursts", 	burst=5, fire_delay=null, move_delay=6,    burst_accuracy=list(0,-1,-2,-2,-3), dispersion=list(0.6, 1.0, 1.0, 1.0, 1.2)),
+		)
+	burst = 3
+	fire_delay = 1
+
+/obj/item/weapon/gun/projectile/automatic/marksman
+	name = "Marksman Carbine"
+	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
+	icon_state = "marksman"
+	item_state = "arg"
+	caliber = "a556"
+	ammo_mag = "20_ar"
+	load_method = MAGAZINE
+	slot_flags = 0
+	requires_two_hands = 1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null)
+		)
+	magazine_type = /obj/item/ammo_magazine/m556_20
+	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
+
+/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
+	name = "Service Rifle"
+	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	icon_state = "servicerifle"
+	item_state = "assault_rifle"
+	ammo_mag = "20_ar"
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, burst_accuracy=null, dispersion=null)
+		)
+	requires_two_hands = 1
+	load_method = MAGAZINE
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 //FALLOUT AMMO
 

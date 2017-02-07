@@ -169,22 +169,22 @@
 /* Ironhammer stuff */
 
 /obj/item/ammo_casing/SMG_sol/rubber
-	desc = "A 9mm Ironhammer rubber bullet casing."
+	desc = "A 9mm rubber bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/SMG_sol/rubber
 
 /obj/item/ammo_casing/SMG_sol/brute
-	desc = "A 9mm Ironhammer hollow point bullet casing."
+	desc = "A 9mm  hollow point bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/SMG_sol/brute
 
 /obj/item/ammo_casing/cl38/rubber
-	desc = "A .38 Ironhammer rubber bullet casing."
+	desc = "A .38 rubber bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/item/projectile/bullet/cl38/rubber
 
 /obj/item/ammo_casing/cl38/brute
-	desc = "A .38 Ironhammer hollow point bullet casing."
+	desc = "A .38 hollow point bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/item/projectile/bullet/cl38/brute
 
@@ -201,11 +201,26 @@
 //gun vendors stuff
 
 /obj/item/ammo_casing/cl32/rubber
-	desc = "A .32 FS rubber bullet casing."
+	desc = "A .32 rubber bullet casing."
 	caliber = ".32"
 	projectile_type = /obj/item/projectile/bullet/cl32/rubber
 
 /obj/item/ammo_casing/cl32/brute
-	desc = "A .38 FS hollow point bullet casing."
+	desc = "A .38 hollow point bullet casing."
 	caliber = ".38"
 	projectile_type = /obj/item/projectile/bullet/cl32/brute
+
+/obj/item/ammo_casing/a556ap
+	projectile_type = /obj/item/projectile/bullet/heavybullet/ap
+
+/obj/item/ammo_casing/a556inc
+	projectile_type = /obj/item/projectile/bullet/incendiary/heavybullet
+
+/obj/item/ammo_casing/a556tox
+	projectile_type = /obj/item/projectile/bullet/heavybullet/tox
+
+/obj/item/ammo_casing/a556surplus
+	projectile_type = /obj/item/projectile/bullet/heavybullet/surplus
+
+/obj/item/ammo_casing/a556training
+	projectile_type = /obj/item/projectile/bullet/training
