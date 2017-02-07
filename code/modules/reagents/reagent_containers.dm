@@ -97,10 +97,10 @@
 			if(!H.check_has_mouth())
 				user << "Where do you intend to put \the [src]? You don't have a mouth!"
 				return
-			var/obj/item/blocked = H.check_mouth_coverage()
-			if(blocked)
-				user << "<span class='warning'>\The [blocked] is in the way!</span>"
-				return
+		//	var/obj/item/blocked = H.check_mouth_coverage()
+		//	if(blocked)
+		//		user << "<span class='warning'>\The [blocked] is in the way!</span>"
+		//		return
 
 		user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) //puts a limit on how fast people can eat/drink things
 		self_feed_message(user)
@@ -113,10 +113,10 @@
 			if(!H.check_has_mouth())
 				user << "Where do you intend to put \the [src]? \The [H] doesn't have a mouth!"
 				return
-			var/obj/item/blocked = H.check_mouth_coverage()
-			if(blocked)
-				user << "<span class='warning'>\The [blocked] is in the way!</span>"
-				return
+		//	var/obj/item/blocked = H.check_mouth_coverage()
+		//	if(blocked)
+		//		user << "<span class='warning'>\The [blocked] is in the way!</span>"
+		//		return
 
 		other_feed_message_start(user, target)
 
@@ -159,3 +159,4 @@
 	playsound(src,'sound/effects/Liquid_transfer_mono.wav',50,1)
 	user << "<span class='notice'>You transfer [trans] units of the solution to [target].</span>"
 	return 1
+

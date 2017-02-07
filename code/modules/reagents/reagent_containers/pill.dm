@@ -19,10 +19,10 @@
 
 	attack(mob/M as mob, mob/user as mob, def_zone)
 		//TODO: replace with standard_feed_mob() call.
-		
+
 		if(M == user)
-			if(!M.can_eat(src))
-				return
+			//if(!M.can_eat(src))
+			//	return
 
 			M << "<span class='notice'>You swallow \the [src].</span>"
 			M.drop_from_inventory(src) //icon update
