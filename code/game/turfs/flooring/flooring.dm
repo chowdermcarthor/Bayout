@@ -192,7 +192,7 @@ var/list/flooring_types
 	desc = "Polished redwood planks."
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_base = "wood"
-	has_damage_range = 6
+	has_damage_range = 4
 	damage_temperature = T0C+200
 	descriptor = "planks"
 	build_type = /obj/item/stack/tile/wood
