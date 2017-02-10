@@ -15,11 +15,11 @@
 /turf/simulated/floor/wasteland/desert/New()
 	icon_state = "wasteland[rand(1,32)]"
 	..()
-
+/*
 //Road
 /turf/simulated/floor/wasteland/road
 	icon_state = "outermiddle"
-
+*/
 
 //PITS
 
