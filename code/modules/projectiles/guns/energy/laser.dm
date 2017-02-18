@@ -1,27 +1,37 @@
 /obj/item/weapon/gun/energy/laser
-	name = "laser carbine"
-	desc = "An Hesphaistos Industries G40E carbine, designed to kill with concentrated energy blasts."
-	icon_state = "laser"
+	name = "\improper AEP7 laser pistol"
+	desc = "A laser energy weapon often used as a sidearm by high-tech organizations, with resilience to extended use, and decent damage output."
+	icon_state = "AEP7"
 	item_state = "laser"
 	fire_sound = 'sound/weapons/Laser.ogg'
+	slot_flags = SLOT_BELT
+	w_class = 2
+	force = WEAPON_FORCE_WEAK
+	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
+	matter = list(DEFAULT_WALL_MATERIAL = 2000)
+	projectile_type = /obj/item/projectile/beam/pistol
+
+/obj/item/weapon/gun/energy/laser/rifle
+	name = "\improper AER9 laser rifle"
+	desc = "While not the top of the line laser rifle prewar, it's sturdiness and reliability have made it more common than later models."
+	icon_state = "laser"
+	item_state = "laser"
 	slot_flags = SLOT_BELT|SLOT_BACK
 	w_class = 3
 	force = WEAPON_FORCE_NORMAL
-	origin_tech = list(TECH_COMBAT = 3, TECH_MAGNET = 2)
-	matter = list(DEFAULT_WALL_MATERIAL = 2000)
-	projectile_type = /obj/item/projectile/beam/midlaser
+	projectile_type = /obj/item/projectile/beam/rifle
 	requires_two_hands = 1
 	wielded_icon = "laser-wielded"
 
-/obj/item/weapon/gun/energy/laser/mounted
+/obj/item/weapon/gun/energy/laser/rifle/mounted
 	self_recharge = 1
 	use_external_power = 1
 
-/obj/item/weapon/gun/energy/laser/practice
+/obj/item/weapon/gun/energy/laser/rifle/practice
 	name = "practice laser carbine"
 	desc = "A modified version of the HI G40E, this one fires less concentrated energy bolts designed for target practice."
 	projectile_type = /obj/item/projectile/beam/practice
-
+/*
 obj/item/weapon/gun/energy/retro
 	name = "retro laser"
 	icon_state = "retro"
@@ -48,6 +58,7 @@ obj/item/weapon/gun/energy/retro
 	max_shots = 5 //to compensate a bit for self-recharging
 	self_recharge = 1
 	requires_two_hands = 0
+*/
 
 /obj/item/weapon/gun/energy/lasercannon
 	name = "laser cannon"
@@ -106,7 +117,7 @@ obj/item/weapon/gun/energy/retro
 	toggle_scope(2.0)
 
 ////////Laser Tag////////////////////
-
+/*
 /obj/item/weapon/gun/energy/lasertag
 	name = "laser tag gun"
 	item_state = "laser"
@@ -137,3 +148,4 @@ obj/item/weapon/gun/energy/retro
 	item_state = "redtag"
 	projectile_type = /obj/item/projectile/beam/lastertag/red
 	required_vest = /obj/item/clothing/suit/redtag
+*/

@@ -8,12 +8,12 @@
 	name = "Dart Gun"
 	item_cost = 5
 	path = /obj/item/weapon/gun/projectile/dartgun
-
+/*
 /datum/uplink_item/item/visible_weapons/crossbow
 	name = "Energy Crossbow"
 	item_cost = 6
 	path = /obj/item/weapon/gun/energy/crossbow
-
+*/
 /datum/uplink_item/item/visible_weapons/energy_sword
 	name = "Energy Sword"
 	item_cost = 8

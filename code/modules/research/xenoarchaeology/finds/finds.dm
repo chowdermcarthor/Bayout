@@ -341,7 +341,8 @@
 			new_item.force = 10
 			item_type = new_item.name
 		if(26)
-			//energy gun
+			return
+/*			//energy gun
 			var/spawn_type = pick(\
 			/obj/item/weapon/gun/energy/laser/practice/xenoarch,\
 			/obj/item/weapon/gun/energy/laser/xenoarch,\
@@ -365,7 +366,7 @@
 				else
 					new_gun.power_supply.charge = 0
 
-			item_type = "gun"
+			item_type = "gun"*/
 		if(27)
 			//revolver
 			var/obj/item/weapon/gun/projectile/new_gun = new /obj/item/weapon/gun/projectile/revolver(src.loc)

@@ -8,6 +8,7 @@
 /*
  * Lasertag
  */
+/*
 /obj/item/clothing/suit/bluetag
 	name = "blue laser tag armour"
 	desc = "Blue Pride, Station Wide."
@@ -27,7 +28,7 @@
 	body_parts_covered = UPPER_TORSO
 	allowed = list (/obj/item/weapon/gun/energy/lasertag/red)
 	siemens_coefficient = 3.0
-
+*/
 /*
  * Costume
  */

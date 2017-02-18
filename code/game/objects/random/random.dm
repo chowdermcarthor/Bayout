@@ -179,8 +179,8 @@
 	icon_state = "energykill100"
 	item_to_spawn()
 		return pick(prob(2);/obj/item/weapon/gun/energy/laser,\
-					prob(2);/obj/item/weapon/gun/energy/gun,\
-					prob(1);/obj/item/weapon/gun/energy/stunrevolver)
+					prob(2);/obj/item/weapon/gun/energy/gun/*,\
+					prob(1);/obj/item/weapon/gun/energy/stunrevolver*/)
 
 /obj/random/projectile
 	name = "Random Projectile Weapon"

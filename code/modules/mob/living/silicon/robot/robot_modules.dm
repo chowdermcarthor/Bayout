@@ -405,7 +405,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
-	src.emag = new /obj/item/weapon/gun/energy/laser/mounted(src)
+	src.emag = new /obj/item/weapon/gun/energy/laser/rifle/mounted(src)
 	..()
 
 /obj/item/weapon/robot_module/security/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
@@ -626,7 +626,7 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/combat/New()
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/thermal(src)
-	src.modules += new /obj/item/weapon/gun/energy/laser/mounted(src)
+	src.modules += new /obj/item/weapon/gun/energy/laser/rifle/mounted(src)
 	src.modules += new /obj/item/weapon/pickaxe/plasmacutter(src)
 	src.modules += new /obj/item/borg/combat/shield(src)
 	src.modules += new /obj/item/borg/combat/mobility(src)

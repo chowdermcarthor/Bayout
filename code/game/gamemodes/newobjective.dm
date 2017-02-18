@@ -561,7 +561,7 @@ datum
 					else
 						return 0
 
-
+/*
 			captainslaser
 				steal_target = /obj/item/weapon/gun/energy/captain
 				explanation_text = "Steal the captain's antique laser gun."
@@ -585,7 +585,7 @@ datum
 						return 10
 					else
 						return 20
-
+*/
 
 			plasmatank
 				steal_target = /obj/item/weapon/tank/plasma

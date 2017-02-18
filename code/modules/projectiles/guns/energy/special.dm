@@ -23,6 +23,7 @@
 	else
 		item_state = initial(item_state)
 
+//TODO: Remake this to be the gamma gun
 /obj/item/weapon/gun/energy/decloner
 	name = "biological demolecularisor"
 	desc = "A gun that discharges high amounts of controlled radiation to slowly break a target into component elements."
@@ -33,6 +34,8 @@
 	max_shots = 10
 	projectile_type = /obj/item/projectile/energy/declone
 
+//No floraguns in fallout, sorry botanists.
+/*
 /obj/item/weapon/gun/energy/floragun
 	name = "floral somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells."
@@ -58,7 +61,8 @@
 		Fire(target,user)
 		return
 	..()
-
+*/
+/* //No meteor guns.
 /obj/item/weapon/gun/energy/meteorgun
 	name = "meteor gun"
 	desc = "For the love of god, make sure you're aiming this the right way!"
@@ -80,8 +84,8 @@
 	item_state = "pen"
 	w_class = 1
 	slot_flags = SLOT_BELT
-
-
+*/
+/*
 /obj/item/weapon/gun/energy/mindflayer
 	name = "mind flayer"
 	desc = "A custom-built weapon of some kind."
@@ -97,6 +101,7 @@
 	w_class = 3.0
 	origin_tech = list(TECH_COMBAT = 5, TECH_PHORON = 4)
 	projectile_type = /obj/item/projectile/energy/phoron
+*/
 
 /* Staves */
 

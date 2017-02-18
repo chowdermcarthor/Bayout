@@ -70,7 +70,7 @@
 	muzzle_type = /obj/effect/projectile/emitter/muzzle
 	tracer_type = /obj/effect/projectile/emitter/tracer
 	impact_type = /obj/effect/projectile/emitter/impact
-
+/*
 /obj/item/projectile/beam/lastertag/blue
 	name = "lasertag beam"
 	icon_state = "bluelaser"
@@ -125,7 +125,7 @@
 		if((istype(M.wear_suit, /obj/item/clothing/suit/bluetag))||(istype(M.wear_suit, /obj/item/clothing/suit/redtag)))
 			M.Weaken(5)
 	return 1
-
+*/
 /obj/item/projectile/beam/sniper
 	name = "sniper beam"
 	icon_state = "xray"
@@ -146,7 +146,15 @@
 	taser_effect = 1
 	agony = 40
 	damage_type = HALLOSS
-	
+
 	muzzle_type = /obj/effect/projectile/stun/muzzle
 	tracer_type = /obj/effect/projectile/stun/tracer
 	impact_type = /obj/effect/projectile/stun/impact
+
+
+//Beams for Fallout13 energy weapons.
+/obj/item/projectile/beam/pistol
+	damage = 12
+
+/obj/item/projectile/beam/rifle
+	damage = 22

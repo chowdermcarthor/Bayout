@@ -45,7 +45,7 @@
 	new /obj/item/clothing/mask/luchador/rudos(src)
 	new /obj/item/clothing/mask/luchador/tecnicos(src)
 
-
+/*
 /obj/structure/closet/lasertag/red
 	name = "red laser tag equipment"
 	desc = "It's a storage unit for laser tag equipment."
@@ -72,3 +72,4 @@
 	new /obj/item/weapon/gun/energy/lasertag/blue(src)
 	new /obj/item/clothing/suit/bluetag(src)
 	new /obj/item/clothing/suit/bluetag(src)
+*/

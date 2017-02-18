@@ -125,7 +125,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	containertype = /obj/structure/closet/crate
 	containername = "\improper Party equipment"
 	group = "Hospitality"
-
+/*
 /datum/supply_packs/lasertag
 	name = "Lasertag equipment"
 	contains = list(/obj/item/weapon/gun/energy/lasertag/red,
@@ -136,7 +136,7 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	containername = "\improper Lasertag Closet"
 	group = "Hospitality"
 	cost = 20
-
+*/
 /datum/supply_packs/internals
 	name = "Internals crate"
 	contains = list(/obj/item/clothing/mask/gas,

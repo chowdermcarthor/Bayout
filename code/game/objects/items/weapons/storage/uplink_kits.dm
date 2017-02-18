@@ -10,7 +10,7 @@
 				return
 
 			if("stealth")
-				new /obj/item/weapon/gun/energy/crossbow(src)
+//				new /obj/item/weapon/gun/energy/crossbow(src)
 				new /obj/item/weapon/pen/reagent/paralysis(src)
 				new /obj/item/device/chameleon(src)
 				return

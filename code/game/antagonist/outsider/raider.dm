@@ -60,14 +60,14 @@ var/datum/antagonist/raider/raiders
 
 	var/list/raider_guns = list(
 		/obj/item/weapon/gun/energy/laser,
-		/obj/item/weapon/gun/energy/retro,
+		/*/obj/item/weapon/gun/energy/retro,
 		/obj/item/weapon/gun/energy/xray,
 		/obj/item/weapon/gun/energy/mindflayer,
 		/obj/item/weapon/gun/energy/toxgun,
-		/obj/item/weapon/gun/energy/stunrevolver,
+		/obj/item/weapon/gun/energy/stunrevolver,*/
 		/obj/item/weapon/gun/energy/ionrifle,
 		/obj/item/weapon/gun/energy/taser,
-		/obj/item/weapon/gun/energy/crossbow/largecrossbow,
+		/*/obj/item/weapon/gun/energy/crossbow/largecrossbow,*/
 		/obj/item/weapon/gun/launcher/crossbow,
 		/obj/item/weapon/gun/launcher/grenade,
 		/obj/item/weapon/gun/launcher/pneumatic,

@@ -110,14 +110,14 @@
 
 /obj/machinery/porta_turret/proc/weapon_setup(var/guntype)
 	switch(guntype)
-		if(/obj/item/weapon/gun/energy/laser/practice)
+		if(/obj/item/weapon/gun/energy/laser/rifle/practice)
 			iconholder = 1
 			eprojectile = /obj/item/projectile/beam
 
 //			if(/obj/item/weapon/gun/energy/laser/practice/sc_laser)
 //				iconholder = 1
 //				eprojectile = /obj/item/projectile/beam
-
+/*
 		if(/obj/item/weapon/gun/energy/retro)
 			iconholder = 1
 
@@ -126,18 +126,18 @@
 
 		if(/obj/item/weapon/gun/energy/captain)
 			iconholder = 1
-
+*/
 		if(/obj/item/weapon/gun/energy/lasercannon)
 			iconholder = 1
 
 		if(/obj/item/weapon/gun/energy/taser)
 			eprojectile = /obj/item/projectile/beam
 			eshot_sound = 'sound/weapons/Laser.ogg'
-
+/*
 		if(/obj/item/weapon/gun/energy/stunrevolver)
 			eprojectile = /obj/item/projectile/beam
 			eshot_sound = 'sound/weapons/Laser.ogg'
-
+*/
 		if(/obj/item/weapon/gun/energy/gun)
 			eprojectile = /obj/item/projectile/beam	//If it has, going to kill mode
 			eshot_sound = 'sound/weapons/Laser.ogg'

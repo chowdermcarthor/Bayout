@@ -17,7 +17,7 @@
 	max_shots = 6
 	recharge_time = 10 //Time it takes for shots to recharge (in ticks)
 
-
+/*
 /obj/item/weapon/gun/energy/stunrevolver
 	name = "stun revolver"
 	desc = "A LAEP20 Zeus. Designed by Lawson Arms and produced under the wing of the FTU, several TSCs have been trying to get a hold of the blueprints for half a decade."
@@ -27,8 +27,9 @@
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3, TECH_POWER = 2)
 	projectile_type = /obj/item/projectile/energy/electrode
 	max_shots = 8
-
-
+*/
+//No energy crossbows in NV
+/*
 /obj/item/weapon/gun/energy/crossbow
 	name = "mini energy-crossbow"
 	desc = "A weapon favored by many mercenary stealth specialists."
@@ -56,3 +57,4 @@
 	force = WEAPON_FORCE_PAINFULL
 	matter = list(DEFAULT_WALL_MATERIAL = 200000)
 	projectile_type = /obj/item/projectile/energy/bolt/large
+*/
